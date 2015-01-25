@@ -1,0 +1,16 @@
+(liga bl5 "Saison 2015/2016, 5. Bundesliga" 10
+  (runde
+    ;; before
+    (mannschaft "Foobar" "Frankfurter Foobar"
+      (spieler "Eugen Ick" "1 dan")
+      (spieler "..." "3 kyu"))
+    ;; in
+    (begegnung "Foobar" "AGruKi"
+      (brett 0 3 |2:0| "(Mo 18)")
+      (brett 1 4 |0:2|)
+      (brett 5 5 |1:1| "(Mo 18)")
+      (brett 6 8 |1:1|))
+    (begegnung "A" "B"
+      (brett)
+      (brett 3 3)
+      (brett nil 4))))
