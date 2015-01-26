@@ -23,6 +23,7 @@
                (:file "rang")
                (:file "begegnung")
                (:file "goliga")
+               (:file "tabelle")
                (:module "tests"
                         :components ((:file "tests")
                                      (:file "liga-test")

@@ -23,10 +23,13 @@
              :initform 0
              :accessor table-row-straf-bp)
    (gegner :initform (make-array 10 :adjustable t :fill-pointer 0)
+           :initarg :gegner
            :reader table-row-gegner)
    (farben :initform (make-array 10 :adjustable t :fill-pointer 0)
+           :initarg :farben
            :reader table-row-farben)
    (wins :initform (make-array +bretter/begegnung+ :initial-element 0)
+         :initarg :wins
          :reader table-row-wins
          :documentation "Count the number of wins per brett"))
   (:documentation "The status of a Mannschaft after a certain round."))
@@ -66,8 +69,58 @@ Mannschaften will be added, so we need only results."
                   (gethash right-name tabelle-ht) right)))))))
 
 (defun update-rows (before-left before-right begegnung)
-  (let ((left (make-instance 'table-row
-                             :mannschaft (table-row-mannschaft before-left)))
-        (right (make-instance 'table-row
-                              :mannschaft (table-row-mannschaft before-right))))
-    ))
+  (let ((left (copy-table-row before-left))
+        (right (copy-table-row before-right)))
+    (loop
+      :for brett :in (begegnung-bretter begegnung)
+      :for i :below +bretter/begegnung+
+      :for result := (brett-result brett)
+      :sum (result-left-points result) :into left-bp
+      :sum (result-right-points result) :into right-bp
+      :sum (penalty-points (result-left-penalty-p result) i) :into left-sbp
+      :sum (penalty-points (result-right-penalty-p result) i) :into right-sbp
+      :do (cond ((> (result-left-points result) (result-right-points result))
+                 (incf (aref (table-row-wins left) i)))
+                ((> (result-right-points result) (result-left-points result))
+                 (incf (aref (table-row-wins right) i))))
+      :finally
+      (multiple-value-bind (left-mp right-mp) (calc-mp left-bp right-bp)
+        (incf (table-row-mp left) left-mp)
+        (incf (table-row-bp left) left-bp)
+        (incf (table-row-mp right) right-mp)
+        (incf (table-row-bp right) right-bp)
+        (incf (table-row-straf-bp left) left-sbp)
+        (incf (table-row-straf-bp right) right-sbp)
+        (setf (table-row-straf-mp left)
+              (calc-straf-mp (table-row-straf-bp left))
+              (table-row-straf-mp right)
+              (calc-straf-mp (table-row-straf-bp right)))
+        (vector-push-extend (table-row-mannschaft left)
+                            (table-row-gegner right))
+        (vector-push-extend (table-row-mannschaft right)
+                            (table-row-gegner left))
+        (vector-push-extend :left (table-row-farben left))
+        (vector-push-extend :right (table-row-farben right))))
+    (values left right)))
+
+(defun penalty-points (penalty-p brett-n)
+  (* (if penalty-p 1 0)
+     (if (zerop brett-n) 2 1)))
+
+(defun calc-mp (left-bp right-bp)
+  (let ((sign (signum (- left-bp right-bp))))
+    (values (1+ sign) (1+ (- sign)))))
+
+(defun calc-straf-mp (bp)
+  (1- (floor bp 2)))
+
+(defun copy-table-row (row)
+  (make-instance 'table-row
+                 :mannschaft (table-row-mannschaft row)
+                 :mp (table-row-mp row)
+                 :bp (table-row-bp row)
+                 :straf-mp (table-row-straf-mp row)
+                 :straf-bp (table-row-straf-bp row)
+                 :gegner (copy-seq (table-row-gegner row))
+                 :farben (copy-seq (table-row-farben row))
+                 :wins (copy-seq (table-row-wins row))))
