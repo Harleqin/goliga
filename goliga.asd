@@ -14,6 +14,7 @@
                #:hu.dwim.stefil
                #:split-sequence)
   :components ((:file "packages")
+               (:file "base")
                (:file "constants")
                (:file "liga")
                (:file "event")
