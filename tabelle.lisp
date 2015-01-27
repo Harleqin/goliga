@@ -42,7 +42,7 @@ events since then."))
   "In this case, we are before the first round.  Events are the events of the
 first round, we only need the Mannschaften."
   (let ((tabelle (make-instance 'tabelle)))
-    (dolist (event (getf events :before) tabelle)
+    (dovector (event (getf events :before) tabelle)
       (when (typep event 'mannschaft)
         (setf (gethash (mannschaft-kuerzel event)
                        (tabelle-mannschaft-values tabelle))
@@ -55,7 +55,7 @@ first round, we only need the Mannschaften."
 Mannschaften will be added, so we need only results."
   (let* ((tabelle (make-instance 'tabelle))
          (tabelle-ht (tabelle-mannschaft-values tabelle)))
-    (dolist (event (getf events :in) tabelle)
+    (dovector (event (getf events :in) tabelle)
       (when (typep event 'begegnung)
         (let* ((left-name (begegnung-left event))
                (right-name (begegnung-right event))
@@ -72,7 +72,7 @@ Mannschaften will be added, so we need only results."
   (let ((left (copy-table-row before-left))
         (right (copy-table-row before-right)))
     (loop
-      :for brett :in (begegnung-bretter begegnung)
+      :for brett :across (begegnung-bretter begegnung)
       :for i :below +bretter/begegnung+
       :for result := (brett-result brett)
       :sum (result-left-points result) :into left-bp
@@ -111,8 +111,14 @@ Mannschaften will be added, so we need only results."
   (let ((sign (signum (- left-bp right-bp))))
     (values (1+ sign) (1+ (- sign)))))
 
+(defparameter *straf-mp-thresholds* (list 4 2))
+
 (defun calc-straf-mp (bp)
-  (1- (floor bp 2)))
+  (loop
+    :for threshold :from (first *straf-mp-thresholds*)
+                   :by (second *straf-mp-thresholds*)
+    :while (>= bp threshold)
+    :count t))
 
 (defun copy-table-row (row)
   (make-instance 'table-row
@@ -121,6 +127,6 @@ Mannschaften will be added, so we need only results."
                  :bp (table-row-bp row)
                  :straf-mp (table-row-straf-mp row)
                  :straf-bp (table-row-straf-bp row)
-                 :gegner (copy-seq (table-row-gegner row))
-                 :farben (copy-seq (table-row-farben row))
-                 :wins (copy-seq (table-row-wins row))))
+                 :gegner (copy-array (table-row-gegner row))
+                 :farben (copy-array (table-row-farben row))
+                 :wins (copy-array (table-row-wins row))))
