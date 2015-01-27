@@ -1,8 +1,6 @@
 (in-package #:goliga)
 
-(defclass event ()
-  ((liga :initarg :liga
-         :reader event-liga)))
+(defclass event () ())
 
 (defclass pre-round-event (event) ())
 
