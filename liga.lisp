@@ -5,7 +5,8 @@
          :reader liga-name)
    (description :initarg :description
                 :reader liga-description)
-   (n-runden :initarg :n-runden)
+   (n-runden :initarg :n-runden
+             :reader liga-n-runden)
    (runden :reader liga-runden)
    (mannschaften :reader liga-mannschaften)
    (tabellen :reader liga-tabellen)))
@@ -33,7 +34,7 @@
 (defgeneric reset-tabellen (liga)
   (:method ((liga liga))
     (setf (slot-value liga 'tabellen)
-          (make-array (slot-value liga 'n-runden)))))
+          (make-array (1+ (slot-value liga 'n-runden))))))
 
 (defvar *ligen* (make-array 10
                             :adjustable t
@@ -64,18 +65,24 @@
 (defun update-tabellen (liga)
   (reset-tabellen liga)
   (setf (aref (liga-tabellen liga) 0)
-        (next-tabelle nil (getf (aref (liga-runden liga) 0) :before)))
+        (next-tabelle nil (aref (liga-runden liga) 0)))
   (loop
     :for from :upfrom 0
-    :for to :upfrom 1
-    :for tabelle := (aref (liga-tabellen liga) from)
+    :for to :upfrom 1 :below (1+ (liga-n-runden liga))
     :do (setf (aref (liga-tabellen liga) to)
-              (next-tabelle tabelle (getf (aref (liga-runden liga) from) :in))
-              (aref (liga-mannschaften liga) to)
-              (next-mannschaften liga from to))))
+              (next-tabelle (aref (liga-tabellen liga) from)
+                            (aref (liga-runden liga) from)))))
 
-(defun next-mannschaften (liga from to)
-  (let ((next (copy-hash-table (aref (liga-mannschaften liga) from)))
+(defun update-mannschaften (liga)
+  (loop
+    :for i :upfrom 0 :below (liga-n-runden liga)
+    :do (setf (aref (liga-mannschaften liga) i)
+              (next-mannschaften liga :from (1- i) :to i))))
+
+(defun next-mannschaften (liga &key from to)
+  (let ((next (if (not (minusp from))
+                  (copy-hash-table (aref (liga-mannschaften liga) from))
+                  (make-hash-table :test #'equal)))
         (m-events (getf (aref (liga-runden liga) to) :before)))
     (dovector (m m-events next)
       (when (typep m 'mannschaft)

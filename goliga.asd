@@ -11,6 +11,7 @@
   :license "public domain"
   :serial t
   :depends-on (#:alexandria
+               #:cl-ppcre
                #:hu.dwim.stefil
                #:split-sequence)
   :components ((:file "packages")
@@ -25,6 +26,7 @@
                (:file "begegnung")
                (:file "goliga")
                (:file "tabelle")
+               (:file "repl")
                (:module "tests"
                         :components ((:file "tests")
                                      (:file "liga-test")

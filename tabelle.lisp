@@ -61,8 +61,8 @@ Mannschaften will be added, so we need only results."
                (right-name (begegnung-right event))
                (before-left (gethash left-name before-ht))
                (before-right (gethash right-name before-ht)))
-          (assert before-left)
-          (assert before-right)
+          (assert (typep before-left 'table-row))
+          (assert (typep before-right 'table-row))
           (multiple-value-bind (left right)
               (update-rows before-left before-right event)
             (setf (gethash left-name tabelle-ht) left
@@ -70,19 +70,27 @@ Mannschaften will be added, so we need only results."
 
 (defun update-rows (before-left before-right begegnung)
   (let ((left (copy-table-row before-left))
-        (right (copy-table-row before-right)))
+        (right (copy-table-row before-right))
+        (left-bp 0)
+        (right-bp 0)
+        (left-sbp 0)
+        (right-sbp 0))
     (loop
-      :for brett :across (begegnung-bretter begegnung)
+      :for result :across (remove-if #'null
+                                    (map 'vector #'brett-result
+                                         (remove-if #'null
+                                                    (begegnung-bretter begegnung))))
       :for i :below +bretter/begegnung+
       :for result := (brett-result brett)
-      :sum (result-left-points result) :into left-bp
-      :sum (result-right-points result) :into right-bp
-      :sum (penalty-points (result-left-penalty-p result) i) :into left-sbp
-      :sum (penalty-points (result-right-penalty-p result) i) :into right-sbp
-      :do (cond ((> (result-left-points result) (result-right-points result))
-                 (incf (aref (table-row-wins left) i)))
-                ((> (result-right-points result) (result-left-points result))
-                 (incf (aref (table-row-wins right) i))))
+      :do
+      (incf left-bp (result-left-points result))
+      (incf right-bp (result-right-points result))
+      (incf left-sbp (penalty-points (result-left-penalty-p result) i))
+      (incf right-sbp (penalty-points (result-right-penalty-p result) i))
+      (cond ((> (result-left-points result) (result-right-points result))
+             (incf (aref (table-row-wins left) i)))
+            ((> (result-right-points result) (result-left-points result))
+             (incf (aref (table-row-wins right) i))))
       :finally
       (multiple-value-bind (left-mp right-mp) (calc-mp left-bp right-bp)
         (incf (table-row-mp left) left-mp)

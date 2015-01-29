@@ -170,13 +170,4 @@
        (begegnung "Fa[]" "lemming"
                   (brett 3 0 "0:2")
                   (brett 5 2 "2:0")
-                  (brett ))
-       (begegnung "Foobar" "AGruKi"
-                  (brett 0 3 |2:0| "(Mo 18)")
-                  (brett 1 4 |0:2|)
-                  (brett 5 5 |1:1| "(Mo 18)")
-                  (brett 6 8 |1:1|))
-       (begegnung "A" "B"
-                  (brett)
-                  (brett 3 3)
-                  (brett nil 4))))
+                  (brett ))))

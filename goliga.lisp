@@ -18,6 +18,8 @@
         :for runde-data :in runden
         :for i :below n-rounds
         :do (enter-runde liga i runde-data))
+      (update-tabellen liga)
+      (update-mannschaften liga)
       liga)))
 
 (defun enter-runde (liga i runde-data)
