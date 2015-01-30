@@ -6,6 +6,10 @@
                       :documentation
                       "A table of mannschaft-kuerzel to table-row")))
 
+(defgeneric tabelle-table-row (tabelle name runde)
+  (:method ((tabelle tabelle) (name string) (runde integer))
+    (aref (gethash name (tabelle-mannschaft-values tabelle)) runde)))
+
 (defclass table-row ()
   ((mannschaft :initarg :mannschaft
                :reader table-row-mannschaft
@@ -33,6 +37,14 @@
          :reader table-row-wins
          :documentation "Count the number of wins per brett"))
   (:documentation "The status of a Mannschaft after a certain round."))
+
+(defun effective-mp (table-row)
+  (- (table-row-mp table-row)
+     (table-row-straf-mp table-row)))
+
+(defun effective-bp (table-row)
+  (- (table-row-bp table-row)
+     (table-row-straf-bp table-row)))
 
 (defgeneric next-tabelle (before events)
   (:documentation "Calculates the tabelle based on the tabelle before and the
@@ -81,7 +93,6 @@ Mannschaften will be added, so we need only results."
                                          (remove-if #'null
                                                     (begegnung-bretter begegnung))))
       :for i :below +bretter/begegnung+
-      :for result := (brett-result brett)
       :do
       (incf left-bp (result-left-points result))
       (incf right-bp (result-right-points result))
@@ -138,3 +149,27 @@ Mannschaften will be added, so we need only results."
                  :gegner (copy-array (table-row-gegner row))
                  :farben (copy-array (table-row-farben row))
                  :wins (copy-array (table-row-wins row))))
+
+(defun print-tabelle (tabelle &optional (stream *standard-output*))
+  (let ((table (multi-sort (hash-table-values (tabelle-mannschaft-values tabelle))
+                           (list #'> :key #'effective-mp)
+                           (list #'> :key #'effective-bp))))
+    (format stream "~12a~4a~4a~%~%" "Mannschaft" "MP" "BP")
+    (dolist (row table)
+      (format stream "~12a~4a~4a~%"
+              (table-row-mannschaft row)
+              (effective-mp row)
+              (effective-bp row)))))
+
+(defun multi-sort (sequence &rest predicate-arg-list)
+  "Sorts the sequence by the argument lists for sort, give most important
+first."
+  (if (endp predicate-arg-list)
+      sequence
+      (apply #'sort
+             (apply #'multi-sort sequence (rest predicate-arg-list))
+             (first predicate-arg-list))))
+
+(defgeneric print-liga-tabelle (liga runde &optional stream)
+  (:method ((liga liga) (runde integer) &optional (stream *standard-output*))
+    (print-tabelle (aref (liga-tabellen liga) runde) stream)))

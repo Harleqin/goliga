@@ -20,3 +20,10 @@
 
 (defun rang= (&rest raenge)
   (every #'= (mapcar #'rang-int raenge)))
+
+(defun format-rang (rang)
+  (if (minusp (rang-int rang))
+      (format nil "~a kyu"
+              (- (rang-int rang)))
+      (format nil "~a dan"
+              (1+ (rang-int rang)))))

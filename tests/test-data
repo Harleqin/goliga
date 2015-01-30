@@ -159,7 +159,7 @@
                    (spieler "Julien Bergmann" "8 kyu"))
        (mannschaft "ffm" "Frankfurter Plateauniker"
                    (spieler "Jan Czeranski" "3 dan")
-                   (spieler "Anton Grzeschiniok" "3 dan")
+                   (spieler "Anton Grzeschniok" "3 dan")
                    (spieler "Gunnar Dickfeld" "2 dan")
                    (spieler "Nils Blarr" "2 dan")
                    (spieler "Michael Connor Schneider" "2 kyu")
@@ -167,7 +167,48 @@
                    (spieler "Jakob Stoeger" "5 kyu")
                    (spieler "Thomas Apelt" "7 kyu"))
        ;; in
-       (begegnung "Fa[]" "lemming"
-                  (brett 3 0 "0:2")
-                  (brett 5 2 "2:0")
-                  (brett ))))
+       (BEGEGNUNG "Fa[]" "lemming"
+                  (BRETT 3 0 "0:2")
+                  (BRETT 5 2 "2:0")
+                  (BRETT 6 6 "2:0")
+                  (BRETT 7 7 "2:0"))
+       (BEGEGNUNG "ajitier" "LeiPaLei0"
+                  (BRETT 1 1 "2:0" "(Mo)")
+                  (BRETT 3 2 "2:0")
+                  (BRETT 4 3 "0:2")
+                  (BRETT 6 4 "0:2"))
+       (BEGEGNUNG "ffm" "haspa0"
+                  (BRETT 0 0 "2:0")
+                  (BRETT 1 1 "2:0")
+                  (BRETT 2 2 "2:0")
+                  (BRETT 5 3 "2:0"))
+       (BEGEGNUNG "HanseGoHB" "e3angels"
+                  (BRETT 0 0 "0:2")
+                  (BRETT 1 1 "2:0")
+                  (BRETT 2 4 "2:0")
+                  (BRETT 3 8 "2:0"))
+       (BEGEGNUNG "Jena3" "Bochum3"
+                  (BRETT 2 3 "2:0")
+                  (BRETT 4 4 "2:0")
+                  (BRETT 5 5 "2:0")
+                  (BRETT 8 6 "2:0"))
+       (BEGEGNUNG "DD2Brett" "AGruKi"
+                  (BRETT 0 2 "2:0")
+                  (BRETT 3 4 "2:0")
+                  (BRETT 4 5 "2:0")
+                  (BRETT 5 6 "2:0"))
+       (BEGEGNUNG "GoeNI" "u18zebrap"
+                  (BRETT 2 0 "2:0")
+                  (BRETT 3 2 "0:2")
+                  (BRETT NIL 4 "!:2")
+                  (BRETT 6 7 "2:0" "(18:00)"))
+       (BEGEGNUNG "MV2Brett" "steinfux3"
+                  (BRETT 2 0 "0:2")
+                  (BRETT 4 1 "0:2")
+                  (BRETT 6 5 "2:0")
+                  (BRETT 7 6 "2:0"))
+       (BEGEGNUNG "GI2Brett" "BananePo"
+                  (BRETT 0 0 "0:2" "(18. 21:30)")
+                  (BRETT 1 1 "0:2" "(18. 20:30)")
+                  (BRETT 2 2 "0:2" "(20:)")
+                  (BRETT 7 3 "0:2" "(18. 19:)"))))

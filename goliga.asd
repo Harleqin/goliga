@@ -26,6 +26,7 @@
                (:file "begegnung")
                (:file "goliga")
                (:file "tabelle")
+               (:file "rate-pair")
                (:file "repl")
                (:module "tests"
                         :components ((:file "tests")
