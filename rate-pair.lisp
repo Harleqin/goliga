@@ -98,9 +98,9 @@ second a vector with mannschaft names at the used indices."
                      (split-sequence #\, line
                                      :test #'equal))))
 
-(defparameter *perl-lib* "-Ilib")
+(defparameter *perl-lib* "-Ipl/lib")
 
-(defparameter *perl-match* "mwmatch.pl")
+(defparameter *perl-match* "pl/mwmatch.pl")
 
 (defun make-losung (liga runde)
   (multiple-value-bind (combos mannschaften) (calc-combos liga runde)
