@@ -77,15 +77,13 @@ second a vector with mannschaft names at the used indices."
       (values normalized-combos mannschaften))))
 
 (defun normalize-weights (combos)
-  (let ((base (loop
-                :for combo :in combos
-                :maximize (third combo) :into max
-                :minimize (third combo) :into min
-                :finally (return (- max min)))))
+  (let ((base (1+ (loop
+                    :for combo :in combos
+                    :minimize (third combo)))))
     (mapcar (lambda (combo)
               (list (first combo)
                     (second combo)
-                    (- base (third combo))))
+                    (- (third combo) base)))
             combos)))
 
 (defun make-perl-input (combos)
