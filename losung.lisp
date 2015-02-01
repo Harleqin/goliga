@@ -125,3 +125,26 @@ second a vector with mannschaft names at the used indices."
               :while line
               :do (print line *error-output*))
             (finish-output))))))
+
+(defun losung-begegnungen (losung)
+  (mapcar (lambda (pair)
+            (cons 'begegnung pair))
+          losung))
+
+(defun print-losung (losung liga runde &optional (stream *standard-output*))
+  (mapcar (lambda (pair)
+            (format stream "~{~a – ~a~%~}"
+                    (mapcar (lambda (kuerzel)
+                              (mannschaft-name
+                               (gethash kuerzel
+                                        (aref (liga-mannschaften liga)
+                                              runde))))
+                            pair)))
+          losung))
+
+(defun compile-losung (liga-file runde)
+  (let* ((liga (load-data liga-file))
+         (losung (make-losung liga runde)))
+    (print-liga-tabelle liga runde)
+    (print-losung losung liga 5)
+    (losung-begegnungen losung)))
