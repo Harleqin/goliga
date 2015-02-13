@@ -31,6 +31,9 @@
                     (make-hash-table :test #'equal))))
   (reset-tabellen liga))
 
+(defun liga-begegnungen (liga runde)
+  (getf (aref (liga-runden liga) runde) :in))
+
 (defgeneric reset-tabellen (liga)
   (:method ((liga liga))
     (setf (slot-value liga 'tabellen)
@@ -87,3 +90,10 @@
     (dovector (m m-events next)
       (when (typep m 'mannschaft)
         (setf (gethash (mannschaft-kuerzel m) next) m)))))
+
+(defun format-liga-begegnungen-lmo (liga runde)
+  (map 'list
+       (lambda (begegnung)
+         (format-begegnung-lmo begegnung
+                               (aref (liga-mannschaften liga) runde)))
+       (getf (aref (liga-runden liga) runde) :in)))

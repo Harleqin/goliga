@@ -1,6 +1,6 @@
 (in-package #:goliga)
 
-(defun begegnung-interactive (liga runde)
+(defun enter-begegnungen-interactive (liga runde)
   (let ((mannschafts-kuerzel (hash-table-keys (aref (liga-mannschaften liga)
                                                     runde))))
     (flet ((parse-mannschaft (kuerzel)
@@ -39,6 +39,18 @@
                                             (maybe-parse-integer (first line))
                                             (maybe-parse-integer (second line))
                                             (nthcdr 2 line)))))))))
+
+(defun edit-begegnung-interactive (liga runde)
+  (let ((begegnungen (liga-begegnungen liga runde)))
+    (map nil
+         (lambda (begegnung i)
+           (format *query-io*
+                   "~a: ~a – ~a~%"
+                   i
+                   (begegnung-left begegnung)
+                   (begegnung-right begegnung)))
+         begegnungen
+         (iota (length begegnungen)))))
 
 (defun format-spieler-name (spieler)
   (if spieler

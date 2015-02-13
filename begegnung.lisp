@@ -18,3 +18,22 @@
         :do (setf (aref (begegnung-bretter begegnung) i)
                   (parse-brett brett-datum)))
       begegnung)))
+
+(defun format-begegnung-lmo (begegnung mannschaften)
+  (let* ((left-kuerzel (begegnung-left begegnung))
+         (right-kuerzel (begegnung-right begegnung))
+         (left (gethash left-kuerzel mannschaften))
+         (right (gethash right-kuerzel mannschaften)))
+    (format nil
+            "~a – ~a\\n\\n~{~a~^\\n~}"
+            (format-kuerzel-lmo left-kuerzel)
+            (format-kuerzel-lmo right-kuerzel)
+            (map 'list
+                 (lambda (brett)
+                   (format-brett-lmo brett left right))
+                 (begegnung-bretter begegnung)))))
+
+(defun format-kuerzel-lmo (kuerzel)
+  (if (search "[]" kuerzel)
+      kuerzel
+      (concatenate 'string kuerzel "[1-4]")))

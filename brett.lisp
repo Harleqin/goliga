@@ -43,3 +43,29 @@
                                          (parse-integer right))
                        :left-penalty-p left-penalty-p
                        :right-penalty-p right-penalty-p)))))
+
+(defun format-brett-lmo (brett left-mannschaft right-mannschaft)
+  (if brett
+      (concatenate 'string
+                   (format-spieler-lmo
+                    (aref (mannschaft-spieler left-mannschaft)
+                          (brett-left-spieler brett)))
+                   " – "
+                   (format-spieler-lmo
+                    (aref (mannschaft-spieler right-mannschaft)
+                          (brett-right-spieler brett)))
+                   " "
+                   (format-result-lmo (brett-result brett)))
+      "N.N. – N.N."))
+
+(defun format-result-lmo (result)
+  (format nil "~a:~a"
+          (format-points-lmo (result-left-points result)
+                             (result-left-penalty-p result))
+          (format-points-lmo (result-right-points result)
+                             (result-right-penalty-p result))))
+
+(defun format-points-lmo (points penaltyp)
+  (if penaltyp
+      "!"
+      (format nil "~a" points)))

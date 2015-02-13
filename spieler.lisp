@@ -14,3 +14,9 @@
     (make-instance 'spieler
                    :name name
                    :rang (make-instance 'rang :string rang))))
+
+(defun format-spieler-lmo (spieler)
+  (format nil
+          "~a ~a"
+          (spieler-name spieler)
+          (format-rang (spieler-rang spieler))))
