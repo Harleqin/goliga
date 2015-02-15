@@ -45,18 +45,21 @@
                        :right-penalty-p right-penalty-p)))))
 
 (defun format-brett-lmo (brett left-mannschaft right-mannschaft)
-  (if brett
-      (concatenate 'string
-                   (format-spieler-lmo
-                    (aref (mannschaft-spieler left-mannschaft)
-                          (brett-left-spieler brett)))
-                   " – "
-                   (format-spieler-lmo
-                    (aref (mannschaft-spieler right-mannschaft)
-                          (brett-right-spieler brett)))
-                   " "
-                   (format-result-lmo (brett-result brett)))
-      "N.N. – N.N."))
+  (flet ((spieler-or-else (index mannschaft)
+           (if (null index)
+               "kampflos"
+               (format-spieler-lmo (aref (mannschaft-spieler mannschaft)
+                                         index)))))
+    (if brett
+        (concatenate 'string
+                     (spieler-or-else (brett-left-spieler brett)
+                                      left-mannschaft)
+                     " – "
+                     (spieler-or-else (brett-right-spieler brett)
+                                      right-mannschaft)
+                     " "
+                     (format-result-lmo (brett-result brett)))
+        "N.N. – N.N.")))
 
 (defun format-result-lmo (result)
   (format nil "~a:~a"

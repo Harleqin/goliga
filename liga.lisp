@@ -32,7 +32,10 @@
   (reset-tabellen liga))
 
 (defun liga-begegnungen (liga runde)
-  (getf (aref (liga-runden liga) runde) :in))
+  (liga-round-events liga runde :in))
+
+(defun liga-round-events (liga runde phase)
+  (getf (aref (liga-runden liga) runde) phase))
 
 (defgeneric reset-tabellen (liga)
   (:method ((liga liga))
@@ -96,4 +99,4 @@
        (lambda (begegnung)
          (format-begegnung-lmo begegnung
                                (aref (liga-mannschaften liga) runde)))
-       (getf (aref (liga-runden liga) runde) :in)))
+       (liga-begegnungen liga runde)))

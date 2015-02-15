@@ -8,7 +8,7 @@
 
 (defun %enter-event (liga round event phase)
   (vector-push-extend event
-                      (getf (aref (liga-runden liga) round) phase)))
+                      (liga-round-events liga round phase)))
 
 (defgeneric enter-event (liga round event)
   (:documentation "Adds an event to the liga in round round."))
