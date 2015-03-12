@@ -62,11 +62,13 @@
         "N.N. – N.N.")))
 
 (defun format-result-lmo (result)
-  (format nil "~a:~a"
-          (format-points-lmo (result-left-points result)
-                             (result-left-penalty-p result))
-          (format-points-lmo (result-right-points result)
-                             (result-right-penalty-p result))))
+  (if result
+      (format nil "~a:~a"
+              (format-points-lmo (result-left-points result)
+                                 (result-left-penalty-p result))
+              (format-points-lmo (result-right-points result)
+                                 (result-right-penalty-p result)))
+      ""))
 
 (defun format-points-lmo (points penaltyp)
   (if penaltyp
