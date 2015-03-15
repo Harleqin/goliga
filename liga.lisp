@@ -94,9 +94,10 @@
       (when (typep m 'mannschaft)
         (setf (gethash (mannschaft-kuerzel m) next) m)))))
 
-(defun format-liga-begegnungen-lmo (liga runde)
-  (map 'list
-       (lambda (begegnung)
-         (format-begegnung-lmo begegnung
-                               (aref (liga-mannschaften liga) runde)))
-       (liga-begegnungen liga runde)))
+(defun format-liga-begegnungen-lmo (liga runde
+                                    &optional (stream *standard-output*))
+  (dovector (begegnung (liga-begegnungen liga runde))
+    (princ (format-begegnung-lmo begegnung
+                                 (aref (liga-mannschaften liga) runde))
+           stream)
+    (terpri)))
