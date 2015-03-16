@@ -146,5 +146,5 @@ second a vector with mannschaft names at the used indices."
   (let* ((liga (load-data liga-file))
          (losung (make-losung liga runde)))
     (print-liga-tabelle liga runde)
-    (print-losung losung liga 5)
+    (print-losung losung liga runde)
     (losung-begegnungen losung)))
