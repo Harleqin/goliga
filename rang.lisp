@@ -19,7 +19,8 @@
   (make-instance 'rang :string string))
 
 (defun rang= (&rest raenge)
-  (every #'= (mapcar #'rang-int raenge)))
+  (let ((rang-ints (mapcar #'rang-int raenge)))
+    (every #'= rang-ints (rest rang-ints))))
 
 (defun format-rang (rang)
   (if (minusp (rang-int rang))
