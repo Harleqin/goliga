@@ -37,6 +37,9 @@
 (defun liga-round-events (liga runde phase)
   (getf (aref (liga-runden liga) runde) phase))
 
+(defun liga-tabelle (liga runde)
+  (aref (liga-tabellen liga) runde))
+
 (defgeneric reset-tabellen (liga)
   (:method ((liga liga))
     (setf (slot-value liga 'tabellen)

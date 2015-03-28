@@ -172,4 +172,4 @@ first."
 
 (defgeneric print-liga-tabelle (liga runde &optional stream)
   (:method ((liga liga) (runde integer) &optional (stream *standard-output*))
-    (print-tabelle (aref (liga-tabellen liga) runde) stream)))
+    (print-tabelle (liga-tabelle liga runde) stream)))

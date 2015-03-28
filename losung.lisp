@@ -56,8 +56,7 @@ table-row-farben."
 for the left, an index for the right and the weight (the smaller the better);
 second a vector with mannschaft names at the used indices."
     (let* ((table-rows (hash-table-values
-                        (tabelle-mannschaft-values (aref (liga-tabellen liga)
-                                                         runde))))
+                        (tabelle-mannschaft-values (liga-tabelle liga runde))))
            (mannschaften (map 'vector #'table-row-mannschaft table-rows))
            (combos (loop
                      :for a :in table-rows
