@@ -30,7 +30,7 @@
                     :reader result-right-penalty-p)))
 
 (defun parse-result (data &aux (result (string data)))
-  (when data
+  (when (and data (find #\: data :test #'char=))
     (destructuring-bind (left right) (split-sequence #\: result)
       (let ((left-penalty-p (position #\! left))
             (right-penalty-p (position #\! right)))
