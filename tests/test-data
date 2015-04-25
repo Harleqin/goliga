@@ -270,6 +270,6 @@
        (BEGEGNUNG "lemming" "BananePo" (BRETT 0 0 "0:2") (BRETT 3 1 "0:2") (BRETT 4 2 "0:2") (BRETT 6 3 "0:2"))
        (BEGEGNUNG "MV2Brett" "Bochum3" (BRETT 2 3 "2:0") (BRETT 4 5 "2:0") (BRETT 6 NIL "2:!") (BRETT 7 NIL "2:!"))
        (BEGEGNUNG "ajitier" "GoeNI" (BRETT 1 0 "0:2") (BRETT 2 2 "0:2") (BRETT 4 3 "0:2") (BRETT 6 6 "0:2"))
-       (BEGEGNUNG "e3angels" "Fa[]" (BRETT 0 2) (BRETT 1 4 "nil" "(Mi)") (BRETT 2 5) (BRETT 3 6))
+       (BEGEGNUNG "e3angels" "Fa[]" (BRETT 0 2 "2:0") (BRETT 1 4 "0:2" "(Mi)") (BRETT 2 5 "0:2") (BRETT 3 6 "2:0"))
        (BEGEGNUNG "haspa0" "steinfux3" (BRETT 0 2 "0:2") (BRETT 4 5 "0:2") (BRETT 5 6 "0:2") (BRETT 6 NIL "2:!"))
        (BEGEGNUNG "Jena3" "ffm" (BRETT 3 2 "0:2") (BRETT 4 4 "0:2") (BRETT 5 7 "0:2") (BRETT 6 8 "0:2"))))
