@@ -104,3 +104,33 @@
                                  (aref (liga-mannschaften liga) runde))
            stream)
     (terpri)))
+
+(defun format-liga-strafpunkte (liga &optional (stream *standard-output*))
+  (let ((mannschaft-strafpunkt-array-table (make-hash-table :test #'equal)))
+    (dolist (kuerzel (hash-table-keys (aref (liga-mannschaften liga) 0)))
+      (setf (gethash kuerzel mannschaft-strafpunkt-array-table)
+            (make-array (liga-n-runden liga)
+                        :initial-element 0)))
+    (flet ((incf-sp (kuerzel runde cost)
+             (incf (aref (gethash kuerzel
+                                  mannschaft-strafpunkt-array-table)
+                         runde)
+                   cost))
+           (format-line (kuerzel array)
+             (format stream "~12a" kuerzel)
+             (dovector (s array)
+               (format stream "~3:a" s))
+             (terpri)))
+      (dotimes (r (liga-n-runden liga))
+        (dovector (begegnung (liga-begegnungen liga r))
+          (loop
+             :for brett :across (begegnung-bretter begegnung)
+             :for cost := 2 :then 1
+             :when (result-left-penalty-p (brett-result brett))
+             :do (incf-sp (begegnung-left begegnung) r cost)
+             :when (result-right-penalty-p (brett-result brett))
+             :do (incf-sp (begegnung-right begegnung) r cost))))
+      (format-line "Mannschaft"
+                   (coerce (iota (liga-n-runden liga)) 'vector))
+      (terpri)
+      (maphash #'format-line mannschaft-strafpunkt-array-table))))
