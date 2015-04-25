@@ -14,8 +14,9 @@
     (is (= (goliga::result-right-points parsed) 0))
     (is (not (goliga::result-left-penalty-p parsed)))
     (is (goliga::result-right-penalty-p parsed)))
-  (signals error
-    (goliga::parse-result "2")))
+  (is (null (goliga::parse-result "2")))
+  (is (null (goliga::parse-result "nil")))
+  (is (null (goliga::parse-result nil))))
 
 (deftest (test-parse-brett :in goliga-tests) ()
   (let ((parsed (goliga::parse-brett '(goliga::brett 1 3 "1:1" "Mo 13:00"))))

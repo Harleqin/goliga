@@ -30,7 +30,10 @@
                     :reader result-right-penalty-p)))
 
 (defun parse-result (data &aux (result (string data)))
-  (when (and data (find #\: data :test #'char=))
+  "Parses the result given as string designator DATA into a result object.  If
+data does not contain a #\:, returns NIL (this means you can enter a dummy value
+on the REPL)."
+  (when (and data (find #\: result :test #'char=))
     (destructuring-bind (left right) (split-sequence #\: result)
       (let ((left-penalty-p (position #\! left))
             (right-penalty-p (position #\! right)))
