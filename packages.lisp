@@ -4,4 +4,5 @@
   (:use #:cl
         #:alexandria
         #:cl-ppcre
-        #:split-sequence))
+        #:split-sequence)
+  (:export #:compile-losung))

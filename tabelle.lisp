@@ -154,12 +154,22 @@ Mannschaften will be added, so we need only results."
   (let ((table (multi-sort (hash-table-values (tabelle-mannschaft-values tabelle))
                            (list #'> :key #'effective-mp)
                            (list #'> :key #'effective-bp))))
-    (format stream "~12a~4a~4a~%~%" "Mannschaft" "MP" "BP")
+    (format stream "~12a~4a~4a ~a~%~%" "Mannschaft" "MP" "BP" "Farben")
     (dolist (row table)
-      (format stream "~12a~4a~4a~%"
+      (format stream "~12a~4a~4a ~a~%"
               (table-row-mannschaft row)
               (effective-mp row)
-              (effective-bp row)))))
+              (effective-bp row)
+              (format-farben row)))))
+
+(defun format-farben (row)
+  (map 'string
+       (lambda (farbe)
+         (getf '(:left #\S
+                 :right #\W)
+               farbe
+               #\?))
+       (table-row-farben row)))
 
 (defun multi-sort (sequence &rest predicate-arg-list)
   "Sorts the sequence by the argument lists for sort, give most important

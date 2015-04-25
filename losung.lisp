@@ -58,19 +58,20 @@ second a vector with mannschaft names at the used indices."
     (let* ((table-rows (hash-table-values
                         (tabelle-mannschaft-values (liga-tabelle liga runde))))
            (mannschaften (map 'vector #'table-row-mannschaft table-rows))
-           (combos (loop
-                     :for a :in table-rows
-                     :for bs :on (rest table-rows)
-                     :append (loop
-                               :for b :in bs
-                               :collect (multiple-value-bind (left right rating)
-                                            (rate-pair a b)
-                                          (when rating
-                                            (list (position left mannschaften
-                                                            :test #'equal)
-                                                  (position right mannschaften
-                                                            :test #'equal)
-                                                  rating))))))
+           (combos
+            (loop
+               :for a :in table-rows
+               :for bs :on (rest table-rows)
+               :append (loop
+                          :for b :in bs
+                          :collect (multiple-value-bind (left right rating)
+                                       (rate-pair a b)
+                                     (when rating
+                                       (list (position left mannschaften
+                                                       :test #'equal)
+                                             (position right mannschaften
+                                                       :test #'equal)
+                                             rating))))))
            (valid-combos (remove-if #'null combos))
            (normalized-combos (normalize-weights valid-combos)))
       (values normalized-combos mannschaften))))
@@ -116,7 +117,8 @@ second a vector with mannschaft names at the used indices."
               (mapcar (lambda (pair)
                         (mapcar (lambda (n)
                                   (aref mannschaften n))
-                                pair))
+                                ;; restore order
+                                (sort-from-combos pair combos)))
                       pairs)))
           (with-open-stream (perl-err (sb-ext:process-error process))
             (loop
@@ -124,6 +126,13 @@ second a vector with mannschaft names at the used indices."
               :while line
               :do (print line *error-output*))
             (finish-output))))))
+
+(defun sort-from-combos (pair combos)
+  (find pair
+        (mapcar (lambda (combo)
+                  (subseq combo 0 2))
+                combos)
+        :test #'set-equal))
 
 (defun losung-begegnungen (losung)
   (mapcar (lambda (pair)
@@ -142,6 +151,10 @@ second a vector with mannschaft names at the used indices."
           losung))
 
 (defun compile-losung (liga-file runde)
+  "Reads the liga information from LIGA-FILE, takes the table before round RUNDE,
+and compiles a pairing for the next round from it.  Prints the table and the
+pairing to *standard-output* and returns the pairing in an sexp form suitable
+for insertion into a liga file."
   (let* ((liga (load-data liga-file))
          (losung (make-losung liga runde)))
     (print-liga-tabelle liga runde)

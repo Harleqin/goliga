@@ -42,5 +42,6 @@
                                      (:file "brett-test")
                                      (:file "mannschaft-test")
                                      (:file "rang-test")
-                                     (:file "goliga-test"))))
+                                     (:file "goliga-test")
+                                     (:file "losung-test"))))
   :perform (test-op (o c) (uiop:symbol-call 'goliga/tests 'goliga-tests)))
