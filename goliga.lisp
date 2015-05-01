@@ -4,7 +4,8 @@
   (with-open-file (data-in datafile
                            :direction :input
                            :if-does-not-exist :error)
-    (let ((*read-eval* nil))
+    (let ((*read-eval* nil)
+          (*package* #.*package*))
       (enter-liga (read data-in)))))
 
 (defun enter-liga (liga-data)

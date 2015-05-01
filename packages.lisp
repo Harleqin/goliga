@@ -5,4 +5,5 @@
         #:alexandria
         #:cl-ppcre
         #:split-sequence)
-  (:export #:compile-losung))
+  (:export #:compile-losung
+           #:load-data))
