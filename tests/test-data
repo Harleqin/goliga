@@ -1,285 +1,198 @@
-(liga bl5 "Saison 2014/2015, 5. Bundesliga" 10
+(liga bl5 "Saison 2015/2016, 5. Bundesliga" 10
       (runde
+       (mannschaft "steinfux2" "Steinfuchs Rhein-Main 2"
+                   (spieler "Thomas Erker" "1 kyu")        ; 0
+                   (spieler "Rolf Sander" "2 kyu")         ; 1
+                   (spieler "Nico Chiaro" "2 kyu")         ; 2
+                   (spieler "André Büschelberger" "3 kyu") ; 3
+                   (spieler "Dirk Breitbach" "3 kyu")      ; 4
+                   (spieler "Michael Boretzky" "3 kyu")    ; 5
+                   (spieler "Michael Eifinger" "3 kyu")    ; 6
+                   (spieler "Katharina Preuß" "4 kyu")     ; 7
+                   (spieler "Janos Sälzer" "4 kyu"))       ; 8
+       (mannschaft "erding0" "Erdinger Kampfklumpen"
+                   (spieler "Sebastian Koller" "4 dan")      ; 9
+                   (spieler "Maximilian Ruth" "1 dan")       ; 10
+                   (spieler "Adrian Kittlitz" "1 kyu")       ; 11
+                   (spieler "Christoph Adelsberger" "2 kyu") ; 12
+                   (spieler "Johannes Runkel" "2 kyu")       ; 13
+                   (spieler "Klaus Flügge" "3 kyu")          ; 14
+                   (spieler "Johannes Mendele" "5 kyu")      ; 15
+                   (spieler "Karl Scheitler" "6 kyu"))       ; 16
+       (mannschaft "Zyklop" "Karlsruher Zyklopen"
+                   (spieler "Lars Dießelberg" "1 dan")   ; 17
+                   (spieler "Alexander Wirth" "1 kyu")   ; 18
+                   (spieler "Birger Holtermann" "4 kyu") ; 19
+                   (spieler "Vitali Henne" "4 kyu")      ; 20
+                   (spieler "Thomas Weickert" "6 kyu")   ; 21
+                   (spieler "Hauke Löffler" "8 kyu"))    ; 22
        (mannschaft "Fa[]" "Franken Aufseß"
-                   (spieler "Karl Beugler" "1 dan")
-                   (spieler "Christina Amhof" "1 dan")
-                   (spieler "Bernhard Gaißmaier" "1 dan")
-                   (spieler "Bernd Sokolowski" "1 kyu")
-                   (spieler "Frank Schebesch" "3 kyu")
-                   (spieler "Gerd Heinrich" "3 kyu")
-                   (spieler "Hendrik Reinke" "3 kyu")
-                   (spieler "Andreas Koch" "3 kyu")
-                   (spieler "Kris Koch" "4 kyu")
-                   (spieler "Jennifer Fuß" "5 kyu"))
-       (mannschaft "DD2Brett" "Dresden 2"
-                   (spieler "David Schimmel" "4 kyu")
-                   (spieler "Eric Dohmen" "4 kyu")
-                   (spieler "Andreas Döring" "4 kyu")
-                   (spieler "Horst Hübner" "4 kyu")
-                   (spieler "Johannes Lötzsch" "6 kyu")
-                   (spieler "Marco Popovic" "7 kyu")
-                   (spieler "Gunnar Wurl" "8 kyu")
-                   (spieler "Paul Grünler" "12 kyu")
-                   (spieler "Jana Mädefessel" "14 kyu"))
-       (mannschaft "HanseGoHB" "HanseGO Bremen"
-                   (spieler "Jörg Sonnenberger" "3 kyu")
-                   (spieler "Joschka Zimdars" "4 kyu")
-                   (spieler "Martin Osthaus" "5 kyu")
-                   (spieler "Karsten Nikisch" "5 kyu")
-                   (spieler "Ling Xu" "6 kyu")
-                   (spieler "Martin Schubert" "6 kyu")
-                   (spieler "Christoph Hertzberg" "8 kyu")
-                   (spieler "Kasim Cinar" "9 kyu"))
-       (mannschaft "GoeNI" "Göttingen Ninja Enten"
-                   (spieler "Gerd Mex" "1 dan")
-                   (spieler "Tim Jung" "1 kyu")
-                   (spieler "Kaspar Stucki" "1 kyu")
-                   (spieler "Meide Xu" "3 kyu")
-                   (spieler "Benjamin Sprung" "4 kyu")
-                   (spieler "Rüdiger Koltze" "4 kyu")
-                   (spieler "Klaus Ideler" "6 kyu"))
+                   (spieler "Karl Beugler [Beug]" "1 dan")       ; 23
+                   (spieler "Bernhard Gaißmaier [Gais]" "1 dan") ; 24
+                   (spieler "Christina Amhof [Amho]" "1 kyu")    ; 25
+                   (spieler "Hendrik Reinke [Rein]" "3 kyu")     ; 26
+                   (spieler "Gerd Heinrich [Hein]" "3 kyu")      ; 27
+                   (spieler "Andreas Koch [KochA]" "3 kyu")      ; 28
+                   (spieler "Kris Koch [KochK]" "4 kyu")         ; 29
+                   (spieler "Frank Schebesch [Sche]" "4 kyu")    ; 30
+                   (spieler "Jennifer Fuß [Fuss]" "4 kyu"))      ; 31
        (mannschaft "MV2Brett" "MV-United 2"
-                   (spieler "Hans-Eckart Lüthke" "1 kyu")
-                   (spieler "Christian Wulf-Andersen" "2 kyu")
-                   (spieler "Marcus Rölz" "2 kyu")
-                   (spieler "Jan Pagenkopf" "3 kyu")
-                   (spieler "Jenny Dittmann" "5 kyu")
-                   (spieler "Ben Fehling" "5 kyu")
-                   (spieler "Franziska Klien" "7 kyu")
-                   (spieler "Tanja Rodio" "9 kyu"))
-       (mannschaft "e3angels" "Empty 3Angels Potsdam"
-                   (spieler "Benjamin Günther" "1 dan")
-                   (spieler "Axel Köhler" "2 kyu")
-                   (spieler "Yvonne Limbach" "4 kyu")
-                   (spieler "Ines Ahrens" "6 kyu")
-                   (spieler "Sonja Zaroba" "8 kyu")
-                   (spieler "Sabine Wohnig" "9 kyu")
-                   (spieler "Klaus Wohnig" "10 kyu")
-                   (spieler "Anke Zaroba" "13 kyu")
-                   (spieler "Iris Frieling" "25 kyu"))
-       (mannschaft "Jena3" "Jena 3"
-                   (spieler "Frank Wunderlich-Pfeiffer" "2 kyu")
-                   (spieler "Tim Jakobsmeyer" "3 kyu")
-                   (spieler "Ricco Hoffmann" "6 kyu")
-                   (spieler "Robert Lukin" "6 kyu")
-                   (spieler "Julius Weber" "6 kyu")
-                   (spieler "Andreas Goral" "7 kyu")
-                   (spieler "Thomas Weiss" "8 kyu")
-                   (spieler "Friedemann Schmidt" "8 kyu")
-                   (spieler "Martin Schirneck" "10 kyu"))
+                   (spieler "Marcus Rölz" "1 kyu")        ; 32
+                   (spieler "Hans-Eckart Lüthke" "1 kyu") ; 33
+                   (spieler "Jan Pagenkopf" "3 kyu")      ; 34
+                   (spieler "Jenny Dittmann" "5 kyu")     ; 35
+                   (spieler "Franziska Klien" "7 kyu")    ; 36
+                   (spieler "Tanja Rodio" "8 kyu"))       ; 37
        (mannschaft "LeiPaLei0" "Leipziger Allerlei"
-                   (spieler "Donald Ranft" "3 kyu")
-                   (spieler "Andreas Ebert" "3 kyu")
-                   (spieler "Volker Reschke" "4 kyu")
-                   (spieler "Raiko Quauck" "6 kyu")
-                   (spieler "Tony Ritter" "8 kyu")
-                   (spieler "Jens Wohlgemuth" "11 kyu")
-                   (spieler "Tilman Reschke" "13 kyu")
-                   (spieler "Philipp Neubert" "15 kyu"))
-       (mannschaft "BananePo" "Banane Potsdam"
-                   (spieler "Oliver Lenz" "1 dan")
-                   (spieler "Klaus Knüppfer" "2 kyu")
-                   (spieler "Arved Ben Gerhard Weigmann" "5 kyu")
-                   (spieler "Tim Cech" "6 kyu")
-                   (spieler "Holger Scaar" "6 kyu")
-                   (spieler "Tobias Ulbricht" "12 kyu"))
-       (mannschaft "AGruKi" "Augsburger Gruppenkiste"
-                   (spieler "Josef Scharler" "2 kyu")
-                   (spieler "Linh Nguyen" "4 kyu")
-                   (spieler "Anton Miller" "3 kyu")
-                   (spieler "Axel Gabe" "5 kyu")
-                   (spieler "Jürgen Ringel" "8 kyu")
-                   (spieler "Michael Wannicke" "8 kyu")
-                   (spieler "Reinhard Lutz" "9 kyu")
-                   (spieler "Marco Demmer" "11 kyu"))
-       (mannschaft "lemming" "Darmstädter Lemminge"
-                   (spieler "Heiko Schott" "5 kyu")
-                   (spieler "Birgit Petri" "5 kyu")
-                   (spieler "Thomas Schlapp" "9 kyu")
-                   (spieler "Katja Gutscher" "9 kyu")
-                   (spieler "Mario Di Schiena" "9 kyu")
-                   (spieler "Jonas Kapitzke" "9 kyu")
-                   (spieler "Domenico Spadavecchia" "11 kyu")
-                   (spieler "Mira Gronau" "18 kyu")
-                   (spieler "Christoph Sedlak" "20 kyu"))
-       (mannschaft "GI2Brett" "Gießen 2"
-                   (spieler "Rolf Ascheberg" "3 kyu")
-                   (spieler "Norman Ulbrich" "4 kyu")
-                   (spieler "Tobias Rapsilber" "5 kyu")
-                   (spieler "Christoph Hartwig" "5 kyu")
-                   (spieler "Hellwig Geisse" "6 kyu")
-                   (spieler "Ann-Katrin Brück" "7 kyu")
-                   (spieler "Esther Klein" "8 kyu")
-                   (spieler "André Neumann" "9 kyu"))
-       (mannschaft "u18zebrap" "U18 Berliner Zebrapinguine"
-                   (spieler "Arved Pittner" "1 kyu")
-                   (spieler "Kevin Guo" "1 kyu")
-                   (spieler "Maximilian Kurtz" "5 kyu")
-                   (spieler "Leo Trip" "8 kyu")
-                   (spieler "Immanuel Dottan" "14 kyu")
-                   (spieler "Friedrich Gwinner" "16 kyu")
-                   (spieler "Len Schneider" "18 kyu")
-                   (spieler "Jonas Seibt" "19 kyu"))
-       (mannschaft "Bochum3" "Bochum Bambussprossen"
-                   (spieler "Mario Konrath" "1 dan")
-                   (spieler "Daniel Petrasch" "1 dan")
-                   (spieler "Christoph Rottmann" "4 kyu")
-                   (spieler "Markus Koch" "7 kyu")
-                   (spieler "Fabian Heising" "8 kyu")
-                   (spieler "Elmar Langenfeld" "8 kyu")
-                   (spieler "Florian Knipping" "10 kyu")
-                   (spieler "Laurent Richard" "12 kyu")
-                   (spieler "Patrick Edwards" "12 kyu"))
-       (mannschaft "haspa0" "Hamburger Sparkasse"
-                   (spieler "Jörn Müller" "5 kyu")
-                   (spieler "Henning Walther" "7 kyu")
-                   (spieler "Ralf Schönfeld" "8 kyu")
-                   (spieler "Rouven Paap" "8 kyu")
-                   (spieler "Jan Graffenberger" "9 kyu")
-                   (spieler "Vladimir Nikolas" "10 kyu")
-                   (spieler "Dirk Vorbau" "16 kyu"))
+                   (spieler "Martin Thaumiller" "3 kyu")  ; 38
+                   (spieler "Donald Ranft" "3 kyu")       ; 39
+                   (spieler "Volker Reschke" "4 kyu")     ; 40
+                   (spieler "Andreas Ebert" "5 kyu")      ; 41
+                   (spieler "Raiko Quauck" "6 kyu")       ; 42
+                   (spieler "Guillaume Lentendu" "9 kyu") ; 43
+                   (spieler "Hermann Sonntag" "9 kyu")    ; 44
+                   (spieler "Jens Wohlgemuth" "11 kyu")   ; 45
+                   (spieler "Tilman Reschke" "13 kyu"))   ; 46
        (mannschaft "steinfux3" "Steinfuchs Rhein-Main 3"
-                   (spieler "Rolf Sander" "2 kyu")
-                   (spieler "Katharina Preuß" "4 kyu")
-                   (spieler "Kerstin Leissen" "6 kyu")
-                   (spieler "Norbert Eisenbürger" "7 kyu")
-                   (spieler "Jörg Leissen" "8 kyu")
-                   (spieler "Aik Czech" "10 kyu")
-                   (spieler "Max Herwig" "10 kyu")
-                   (spieler "Frieder Nikolaisen" "10 kyu")
-                   (spieler "Adrienn Ferencz" "10 kyu"))
+                   (spieler "Kerstin Leissen" "6 kyu")     ; 47
+                   (spieler "Norbert Eisenbürger" "7 kyu") ; 48
+                   (spieler "Jörg Leissen" "8 kyu")        ; 49
+                   (spieler "Aik Czech" "10 kyu")          ; 50
+                   (spieler "Max Herwig" "10 kyu")         ; 51
+                   (spieler "Frieder Nikolaisen" "10 kyu") ; 52
+                   (spieler "Adrienn Ferencz" "10 kyu")    ; 53
+                   (spieler "Martin Vogt" "15 kyu"))       ; 54
+       (mannschaft "haspa0" "Hamburger Sparkasse"
+                   (spieler "Jörn Müller" "5 kyu")       ; 55
+                   (spieler "Henning Walther" "7 kyu")   ; 56
+                   (spieler "Ralf Schönfeld" "8 kyu")    ; 57
+                   (spieler "Rouven Paap" "8 kyu")       ; 58
+                   (spieler "Jan Graffenberger" "9 kyu") ; 59
+                   (spieler "Vladimir Nikolas" "10 kyu") ; 60
+                   (spieler "Dirk Vorbau" "16 kyu"))     ; 61
        (mannschaft "ajitier" "Berliner Ajitierchen"
-                   (spieler "Nico Stephan" "1 kyu")
-                   (spieler "Thorsten Lucke" "2 kyu")
-                   (spieler "Piet Hessing" "3 kyu")
-                   (spieler "Franziska Schlösser" "5 kyu")
-                   (spieler "Michael Goltze" "5 kyu")
-                   (spieler "Peter König" "7 kyu")
-                   (spieler "Julien Bergmann" "8 kyu"))
-       (mannschaft "ffm" "Frankfurter Plateauniker"
-                   (spieler "Jan Czeranski" "3 dan")
-                   (spieler "Anton Grzeschniok" "3 dan")
-                   (spieler "Gunnar Dickfeld" "2 dan")
-                   (spieler "Nils Blarr" "2 dan")
-                   (spieler "Michael Connor Schneider" "2 kyu")
-                   (spieler "Gerhard Kirschbaum" "3 kyu")
-                   (spieler "Jakob Stoeger" "5 kyu")
-                   (spieler "Thomas Apelt" "7 kyu"))
-       (BEGEGNUNG "Fa[]" "lemming" (BRETT 3 0 "0:2") (BRETT 5 2 "2:0") (BRETT 6 6 "2:0") (BRETT 7 7 "2:0"))
-       (BEGEGNUNG "ajitier" "LeiPaLei0" (BRETT 1 1 "2:0" "(Mo)") (BRETT 3 2 "2:0") (BRETT 4 3 "0:2") (BRETT 6 4 "0:2"))
-       (BEGEGNUNG "ffm" "haspa0" (BRETT 0 0 "2:0") (BRETT 1 1 "2:0") (BRETT 2 2 "2:0") (BRETT 5 3 "2:0"))
-       (BEGEGNUNG "HanseGoHB" "e3angels" (BRETT 0 0 "0:2") (BRETT 1 1 "2:0") (BRETT 2 4 "2:0") (BRETT 3 8 "2:0"))
-       (BEGEGNUNG "Jena3" "Bochum3" (BRETT 2 3 "2:0") (BRETT 4 4 "2:0") (BRETT 5 5 "2:0") (BRETT 8 6 "2:0"))
-       (BEGEGNUNG "DD2Brett" "AGruKi" (BRETT 0 2 "2:0") (BRETT 3 4 "2:0") (BRETT 4 5 "2:0") (BRETT 5 6 "2:0"))
-       (BEGEGNUNG "GoeNI" "u18zebrap" (BRETT 2 0 "2:0") (BRETT 3 2 "0:2") (BRETT NIL 4 "!:2") (BRETT 6 7 "2:0" "(18:00)"))
-       (BEGEGNUNG "MV2Brett" "steinfux3" (BRETT 2 0 "0:2") (BRETT 4 1 "0:2") (BRETT 6 5 "2:0") (BRETT 7 6 "2:0"))
-       (BEGEGNUNG "GI2Brett" "BananePo" (BRETT 0 0 "0:2" "(18. 21:30)") (BRETT 1 1 "0:2" "(18. 20:30)") (BRETT 2 2 "0:2" "(20:)") (BRETT 7 3 "0:2" "(18. 19:)")))
-      (runde
-       (BEGEGNUNG "LeiPaLei0" "GoeNI" (BRETT 0 1 "0:2") (BRETT 1 2 "2:0" "(Di)") (BRETT 3 3 "0:2") (BRETT 4 6 "0:2"))
-       (BEGEGNUNG "u18zebrap" "MV2Brett" (BRETT 0 0 "2:0" "(So)") (BRETT 1 3 "2:0") (BRETT 3 4 "0:2" "(18:00)") (BRETT 4 5 "0:2" "(Mi)"))
-       (BEGEGNUNG "steinfux3" "ajitier" (BRETT 0 0 "0:2") (BRETT 1 3 "2:0") (BRETT 5 4 "0:2") (BRETT 6 6 "0:2"))
-       (BEGEGNUNG "BananePo" "Fa[]" (BRETT 1 1 "0:2") (BRETT 2 2 "0:2") (BRETT 3 5 "2:0") (BRETT NIL 6 "!:2"))
-       (BEGEGNUNG "e3angels" "AGruKi" (BRETT 0 2 "2:0") (BRETT 1 3 "2:0") (BRETT 2 4 "2:0") (BRETT 3 6 "2:0"))
-       (BEGEGNUNG "ffm" "HanseGoHB" (BRETT 3 0 "0:2") (BRETT 4 1 "0:2") (BRETT 6 4 "2:0") (BRETT 7 7 "2:0"))
-       (BEGEGNUNG "lemming" "GI2Brett" (BRETT 0 0 "2:0") (BRETT 2 2 "0:2") (BRETT 3 4 "2:0") (BRETT 5 6 "0:2"))
-       (BEGEGNUNG "Jena3" "DD2Brett" (BRETT 2 3 "2:0") (BRETT 4 4 "0:2") (BRETT 5 6 "0:2") (BRETT 8 8 "2:0"))
-       (BEGEGNUNG "Bochum3" "haspa0" (BRETT 3 0 "0:2") (BRETT 4 2 "2:0") (BRETT 6 4 "0:2") (BRETT 8 5 "0:2")))
-      (runde
-       (BEGEGNUNG "GoeNI" "ffm" (BRETT 0 1 "2:0") (BRETT 1 3 "0:2") (BRETT 3 4 "2:0") (BRETT 5 5 "0:2"))
-       (BEGEGNUNG "e3angels" "u18zebrap" (BRETT 0 0 "0:2" "(Mo 18:30)") (BRETT 1 1 "0:2" "(So 15)") (BRETT 2 3 "0:2" "(Mo 18:30)") (BRETT 3 4 "2:0" "(Mo 18:30)"))
-       (BEGEGNUNG "lemming" "steinfux3" (BRETT 0 0 "0:2") (BRETT 3 5 "0:2") (BRETT 4 7 "0:2") (BRETT 6 8 "2:0"))
-       (BEGEGNUNG "ajitier" "Fa[]" (BRETT 1 1 "2:0") (BRETT 2 2 "0:2") (BRETT 3 6 "2:0") (BRETT 4 8 "2:0"))
-       (BEGEGNUNG "AGruKi" "Bochum3" (BRETT 3 3 "2:0") (BRETT 4 4 "0:2") (BRETT 5 6 "0:2") (BRETT 6 7 "0:2"))
-       (BEGEGNUNG "haspa0" "Jena3" (BRETT 0 4 "0:2") (BRETT 1 5 "2:0") (BRETT 3 6 "2:0") (BRETT 5 8 "2:0"))
-       (BEGEGNUNG "HanseGoHB" "DD2Brett" (BRETT 0 3 "2:0") (BRETT 1 4 "2:0") (BRETT 2 6 "2:0") (BRETT 3 7 "2:0"))
-       (BEGEGNUNG "GI2Brett" "LeiPaLei0" (BRETT 1 0 "0:2") (BRETT 2 1 "0:2") (BRETT 3 2 "2:0") (BRETT 6 5 "2:0"))
-       (BEGEGNUNG "MV2Brett" "BananePo" (BRETT 0 NIL "2:!") (BRETT 2 1 "0:2") (BRETT NIL 2 "!:2") (BRETT 4 5 "2:0")))
-      (runde
-       (BEGEGNUNG "haspa0" "GoeNI" (BRETT 0 2 "0:2") (BRETT 1 3 "0:2" "(Di)") (BRETT 2 4 "0:2") (BRETT 6 6 "0:2" "(techn.)"))
-       (BEGEGNUNG "u18zebrap" "Jena3" (BRETT 0 4 "2:0") (BRETT 1 5 "2:0") (BRETT 3 6 "2:0") (BRETT 4 8 "0:2"))
-       (BEGEGNUNG "HanseGoHB" "ajitier" (BRETT 0 0 "0:2") (BRETT 1 3 "2:0") (BRETT 3 4 "2:0") (BRETT 4 6 "2:0"))
-       (BEGEGNUNG "LeiPaLei0" "e3angels" (BRETT 2 0 "0:2") (BRETT 3 1 "0:2") (BRETT 5 2 "0:2") (BRETT 6 3 "0:2"))
-       (BEGEGNUNG "Fa[]" "ffm" (BRETT 1 0 "0:2") (BRETT 2 2 "0:2") (BRETT 5 3 "0:2") (BRETT 6 6 "2:0"))
-       (BEGEGNUNG "BananePo" "steinfux3" (BRETT 0 0 "2:0") (BRETT 2 5 "2:0") (BRETT 3 6 "2:0") (BRETT 5 7 "0:2"))
-       (BEGEGNUNG "Bochum3" "GI2Brett" (BRETT 3 0 "0:2") (BRETT 4 1 "2:0") (BRETT 5 2 "0:2") (BRETT 6 3 "0:2"))
-       (BEGEGNUNG "DD2Brett" "MV2Brett" (BRETT 1 2 "0:2") (BRETT 3 3 "0:2") (BRETT 4 4 "2:0") (BRETT 8 7 "0:2"))
-       (BEGEGNUNG "AGruKi" "lemming" (BRETT 2 1 "2:0") (BRETT 3 2 "2:0") (BRETT 5 4 "2:0") (BRETT 6 6 "0:2")))
-      (runde
+                   (spieler "James Brückl" "1 dan")        ; 62
+                   (spieler "Jens Ahlbrecht" "1 kyu")      ; 63
+                   (spieler "Nico Stephan" "1 kyu")        ; 64
+                   (spieler "Piet Hessing" "3 kyu")        ; 65
+                   (spieler "Michael Goltze" "5 kyu")      ; 66
+                   (spieler "Julien Bergmann" "5 kyu")     ; 67
+                   (spieler "Franziska Schlösser" "5 kyu") ; 68
+                   (spieler "Peter König" "7 kyu"))        ; 69
        (mannschaft "GI2Brett" "Gießen 2"
-                   (spieler "Rolf Ascheberg" "3 kyu")
-                   (spieler "Norman Ulbrich" "4 kyu")
-                   (spieler "Tobias Rapsilber" "5 kyu")
-                   (spieler "Christoph Hartwig" "5 kyu")
-                   (spieler "Hellwig Geisse" "6 kyu")
-                   (spieler "Ann-Katrin Brück" "7 kyu")
-                   (spieler "Esther Klein" "8 kyu")
-                   (spieler "André Neumann" "9 kyu")
-                   (spieler "Fabian Müller" "10 kyu"))
-       (mannschaft "ffm" "Frankfurter Plateauniker"
-                   (spieler "Jan Czeranski" "3 dan")
-                   (spieler "Nils Blarr" "2 dan")
-                   (spieler "Anton Grzeschniok" "3 dan")
-                   (spieler "Gunnar Dickfeld" "2 dan")
-                   (spieler "Benjamin Wirthmann" "1 kyu")
-                   (spieler "Michael Connor Schneider" "2 kyu")
-                   (spieler "Gerhard Kirschbaum" "3 kyu")
-                   (spieler "Jakob Stoeger" "5 kyu")
-                   (spieler "Thomas Apelt" "7 kyu"))
-       (BEGEGNUNG "LeiPaLei0" "AGruKi" (BRETT 0 3 "0:2") (BRETT 1 4 "2:0") (BRETT 3 5 "2:0") (BRETT 6 6 "0:2"))
-       (BEGEGNUNG "GI2Brett" "haspa0" (BRETT 1 1 "0:2") (BRETT 2 3 "2:0") (BRETT 3 4 "2:0") (BRETT 4 5 "2:0"))
-       (BEGEGNUNG "GoeNI" "HanseGoHB" (BRETT 2 0 "0:2") (BRETT 3 2 "0:2") (BRETT 4 6 "0:2") (BRETT 5 7 "0:2"))
-       (BEGEGNUNG "e3angels" "BananePo" (BRETT 0 0 "0:2") (BRETT 1 2 "2:0") (BRETT 2 3 "2:0") (BRETT 3 5 "2:0"))
-       (BEGEGNUNG "steinfux3" "DD2Brett" (BRETT 0 0 "2:0") (BRETT 2 4 "2:0") (BRETT 5 6 "0:2") (BRETT 6 7 "2:0"))
-       (BEGEGNUNG "ffm" "u18zebrap" (BRETT 0 0 "2:0") (BRETT 3 1 "0:2") (BRETT 6 3 "2:0") (BRETT 8 4 "2:0"))
-       (BEGEGNUNG "lemming" "Bochum3" (BRETT 0 3 "2:0") (BRETT 2 4 "0:2") (BRETT 3 5 "0:2") (BRETT 5 8 "2:0"))
-       (BEGEGNUNG "Jena3" "Fa[]" (BRETT 2 2 "0:2") (BRETT 4 4 "0:2") (BRETT 5 6 "0:2") (BRETT 8 7 "0:2"))
-       (BEGEGNUNG "MV2Brett" "ajitier" (BRETT 0 0 "0:2") (BRETT 2 1 "2:0") (BRETT 3 2 "0:2") (BRETT 4 5 "0:2")))
-      (runde
-       (mannschaft "MV2Brett" "MV-United 2"
-                   (spieler "Hans-Eckart Lüthke" "1 kyu")
-                   (spieler "Christian Wulf-Andersen" "2 kyu")
-                   (spieler "Marcus Rölz" "2 kyu")
-                   (spieler "Jan Pagenkopf" "3 kyu")
-                   (spieler "Jenny Dittmann" "5 kyu")
-                   (spieler "-Ben-Fehling-gesperrt-" "5 kyu")
-                   (spieler "Franziska Klien" "7 kyu")
-                   (spieler "Tanja Rodio" "9 kyu"))
-       (BEGEGNUNG "e3angels" "GoeNI" (BRETT 0 2 "2:0") (BRETT 1 4 "2:0") (BRETT 2 5 "2:0") (BRETT 3 6 "2:0"))
-       (BEGEGNUNG "ffm" "ajitier" (BRETT 3 1 "2:0") (BRETT 1 2 "0:2" "(aut.)") (BRETT 4 3 "2:0") (BRETT 6 6 "2:0"))
-       (BEGEGNUNG "Fa[]" "HanseGoHB" (BRETT 1 0 "2:0") (BRETT 2 1 "0:2") (BRETT 4 2 "2:0") (BRETT 5 3 "2:0"))
-       (BEGEGNUNG "LeiPaLei0" "Bochum3" (BRETT 1 2 "2:0") (BRETT 2 3 "0:2") (BRETT 5 4 "0:2") (BRETT 6 5 "2:0"))
-       (BEGEGNUNG "MV2Brett" "GI2Brett" (BRETT 2 0 "2:0") (BRETT NIL 1 "!:2") (BRETT 4 2 "2:0") (BRETT 6 4 "2:0"))
-       (BEGEGNUNG "AGruKi" "Jena3" (BRETT 1 3 "2:0") (BRETT 3 4 "0:2") (BRETT 5 5 "1:1") (BRETT 6 8 "0:2"))
-       (BEGEGNUNG "u18zebrap" "steinfux3" (BRETT 0 0 "2:0") (BRETT 3 1 "0:2") (BRETT NIL 2 "!:2") (BRETT 7 5 "0:2"))
-       (BEGEGNUNG "haspa0" "BananePo" (BRETT 0 2 "0:2") (BRETT 2 3 "0:2") (BRETT 4 NIL "2:!") (BRETT 5 5 "2:0"))
-       (BEGEGNUNG "DD2Brett" "lemming" (BRETT 0 0 "2:0") (BRETT 3 4 "2:0") (BRETT 6 5 "2:0") (BRETT 7 6 "2:0")))
-      (runde
-       (BEGEGNUNG "Fa[]" "MV2Brett" (BRETT 2 2 "0:2") (BRETT 5 4 "2:0") (BRETT 6 6 "2:0") (BRETT 7 7 "2:0"))
-       (BEGEGNUNG "AGruKi" "haspa0" (BRETT 2 0 "2:0") (BRETT 4 1 "0:2") (BRETT 5 2 "0:2") (BRETT 6 5 "0:2"))
-       (BEGEGNUNG "DD2Brett" "Bochum3" (BRETT 3 1 "0:2") (BRETT 6 3 "2:0") (BRETT 7 4 "0:2") (BRETT 8 NIL "2:!"))
-       (BEGEGNUNG "GoeNI" "GI2Brett" (BRETT 0 0 "2:0") (BRETT 2 1 "2:0") (BRETT 5 2 "2:0") (BRETT 6 3 "0:2"))
-       (BEGEGNUNG "steinfux3" "HanseGoHB" (BRETT 3 0 "0:2") (BRETT 5 2 "0:2") (BRETT 6 4 "0:2") (BRETT 8 6 "0:2"))
-       (BEGEGNUNG "lemming" "LeiPaLei0" (BRETT 0 0 "0:2") (BRETT 4 3 "0:2") (BRETT 5 5 "2:0") (BRETT 6 6 "2:0"))
-       (BEGEGNUNG "BananePo" "Jena3" (BRETT 0 3 "2:0" "(Mi)") (BRETT 2 4 "0:2" "(Mi)") (BRETT NIL 5 "!:2") (BRETT NIL 8 "!:2"))
-       (BEGEGNUNG "ajitier" "u18zebrap" (BRETT 0 0 "0:2" "(Mo)") (BRETT 1 3 "0:2" "(Sa)") (BRETT 4 4 "2:0" "(18:00)") (BRETT 6 5 "2:0" "(Di)"))
-       (BEGEGNUNG "ffm" "e3angels" (BRETT 1 0 "0:2") (BRETT 2 1 "2:0") (BRETT 3 2 "2:0") (BRETT 7 4 "2:0")))
-      (runde
-       (BEGEGNUNG "u18zebrap" "HanseGoHB" (BRETT 0 0 "2:0" "(Di 18:00)") (BRETT 3 1 "0:2" "(Do 16:30)") (BRETT 4 3 "0:2" "(Mi 19:00)") (BRETT 5 6 "0:2" "(Mi 18:00)"))
-       (BEGEGNUNG "GI2Brett" "AGruKi" (BRETT 0 2 "0:2") (BRETT 1 3 "0:2") (BRETT 4 5 "2:0") (BRETT 6 6 "2:0"))
-       (BEGEGNUNG "DD2Brett" "LeiPaLei0" (BRETT 4 0 "2:0") (BRETT 6 1 "0:2") (BRETT 7 3 "0:2") (BRETT NIL 5 "!:2"))
-       (BEGEGNUNG "lemming" "BananePo" (BRETT 0 0 "0:2") (BRETT 3 1 "0:2") (BRETT 4 2 "0:2") (BRETT 6 3 "0:2"))
-       (BEGEGNUNG "MV2Brett" "Bochum3" (BRETT 2 3 "2:0") (BRETT 4 5 "2:0") (BRETT 6 NIL "2:!") (BRETT 7 NIL "2:!"))
-       (BEGEGNUNG "ajitier" "GoeNI" (BRETT 1 0 "0:2") (BRETT 2 2 "0:2") (BRETT 4 3 "0:2") (BRETT 6 6 "0:2"))
-       (BEGEGNUNG "e3angels" "Fa[]" (BRETT 0 2 "2:0") (BRETT 1 4 "0:2" "(Mi)") (BRETT 2 5 "0:2") (BRETT 3 6 "2:0"))
-       (BEGEGNUNG "haspa0" "steinfux3" (BRETT 0 2 "0:2") (BRETT 4 5 "0:2") (BRETT 5 6 "0:2") (BRETT 6 NIL "2:!"))
-       (BEGEGNUNG "Jena3" "ffm" (BRETT 3 2 "0:2") (BRETT 4 4 "0:2") (BRETT 5 7 "0:2") (BRETT 6 8 "0:2")))
-      (runde
-       (BEGEGNUNG "Fa[]" "GoeNI" (BRETT 1 0 "0:2") (BRETT 2 2 "0:2") (BRETT 5 3 "0:2") (BRETT 6 6 "2:0"))
-       (BEGEGNUNG "steinfux3" "ffm" (BRETT 0 2 "2:0") (BRETT 1 3 "0:2") (BRETT 6 6 "0:2") (BRETT 7 7 "0:2"))
-       (BEGEGNUNG "haspa0" "lemming" (BRETT 0 0 "2:0") (BRETT 1 3 "2:0") (BRETT 2 5 "2:0") (BRETT 6 6 "0:2"))
-       (BEGEGNUNG "Jena3" "LeiPaLei0" (BRETT 3 0 "0:2") (BRETT 4 1 "2:0") (BRETT 5 3 "0:2") (BRETT 6 5 "0:2"))
-       (BEGEGNUNG "HanseGoHB" "MV2Brett" (BRETT 0 0 "2:0") (BRETT 3 2 "0:2") (BRETT 6 4 "2:0") (BRETT 7 7 "2:0"))
-       (BEGEGNUNG "ajitier" "e3angels" (BRETT 0 0 "0:2") (BRETT 2 1 "2:0") (BRETT 3 2 "0:2") (BRETT 6 3 "0:2"))
-       (BEGEGNUNG "Bochum3" "u18zebrap" (BRETT 2 0 "0:2") (BRETT 3 3 "0:2") (BRETT 6 4 "0:2") (BRETT NIL NIL "!:!"))
-       (BEGEGNUNG "BananePo" "AGruKi" (BRETT 0 3 "2:0") (BRETT 2 4 "2:0") (BRETT 5 5 "0:2") (BRETT NIL 7 "!:2"))
-       (BEGEGNUNG "GI2Brett" "DD2Brett" (BRETT 0 2 "0:2") (BRETT 3 3 "0:2") (BRETT 4 NIL "2:!") (BRETT 5 7 "2:0"))))
+                   (spieler "Rolf Ascheberg" "3 kyu")    ; 70
+                   (spieler "Norman Ulbrich" "4 kyu")    ; 71
+                   (spieler "Tobias Rapsilber" "4 kyu")  ; 72
+                   (spieler "Christoph Hartwig" "5 kyu") ; 73
+                   (spieler "Esther Klein" "6 kyu")      ; 74
+                   (spieler "Hellwig Geisse" "6 kyu")    ; 75
+                   (spieler "Ann-Katrin Brück" "7 kyu")  ; 76
+                   (spieler "Guglielmo Figus" "8 kyu"))  ; 77
+       (mannschaft "DD2Brett" "Dresden 2"
+                   (spieler "Stephan Wagner" "2 kyu")    ; 78
+                   (spieler "Yasushi Iwai" "3 kyu")      ; 79
+                   (spieler "Johannes Lötzsch" "4 kyu")  ; 80
+                   (spieler "Horst Hübner" "4 kyu")      ; 81
+                   (spieler "Georg Schröter" "7 kyu")    ; 82
+                   (spieler "Gunnar Wurl" "8 kyu")       ; 83
+                   (spieler "Paul Grünler" "11 kyu")     ; 84
+                   (spieler "Jana Mädefessel" "12 kyu")) ; 85
+       (mannschaft "Jena3" "Jena 3"
+                   (spieler "Hendrik Schmidt" "3 kyu")    ; 86
+                   (spieler "Tim Jakobsmeyer" "3 kyu")    ; 87
+                   (spieler "Ricco Hoffmann" "6 kyu")     ; 88
+                   (spieler "Robert Lukin" "6 kyu")       ; 89
+                   (spieler "Julius Weber" "6 kyu")       ; 90
+                   (spieler "Andreas Goral" "8 kyu")      ; 91
+                   (spieler "Thomas Weiss" "8 kyu")       ; 92
+                   (spieler "Friedemann Schmidt" "8 kyu") ; 93
+                   (spieler "Martin Schirneck" "9 kyu"))  ; 94
+       (mannschaft "AGruKi" "Augsburger Gruppenkiste"
+                   (spieler "Linh Nguyen" "4 kyu")      ; 95
+                   (spieler "Anton Miller" "3 kyu")     ; 96
+                   (spieler "Axel Gabe" "5 kyu")        ; 97
+                   (spieler "Michael Wannicke" "8 kyu") ; 98
+                   (spieler "Jürgen Ringel" "9 kyu")    ; 99
+                   (spieler "Reinhard Lutz" "9 kyu")    ; 100
+                   (spieler "Johannes Rieder" "10 kyu") ; 101
+                   (spieler "Marco Demmer" "11 kyu"))   ; 102
+       (mannschaft "lemming" "Darmstädter Lemminge"
+                   (spieler "Pavol Safarik" "1 kyu")         ; 103
+                   (spieler "Mattias Wörnle" "3 kyu")        ; 104
+                   (spieler "Heiko Schott" "5 kyu")          ; 105
+                   (spieler "Manuel Kitzlinger" "5 kyu")     ; 106
+                   (spieler "Birgit Petri" "5 kyu")          ; 107
+                   (spieler "Domenico Spadavecchia" "8 kyu") ; 108
+                   (spieler "Katja Gutscher" "8 kyu")        ; 109
+                   (spieler "Jonas Kapitzke" "9 kyu")        ; 110
+                   (spieler "Mario Di Schiena" "9 kyu")      ; 111
+                   (spieler "Mira Gronau" "18 kyu"))         ; 112
+       (mannschaft "hhhafen" "Hamburg Hafen"
+                   (spieler "Timo Kreuzer" "1 dan")          ; 113
+                   (spieler "Claus Albermann" "1 dan")       ; 114
+                   (spieler "Peter Schildberg" "2 kyu")      ; 115
+                   (spieler "Martin Stiassny" "4 kyu")       ; 116
+                   (spieler "Sandra Wiedner" "5 kyu")        ; 117
+                   (spieler "Paul Conradi" "5 kyu")          ; 118
+                   (spieler "Uwe Frischmuth" "8 kyu")        ; 119
+                   (spieler "Gerald Peters" "8 kyu")         ; 120
+                   (spieler "Gudrun Breitenbauch" "10 kyu")) ; 121
+       (mannschaft "TuebStL" "Tübingen Stirb Langsam"
+                   (spieler "Hannes Vogt" "2 kyu")     ; 122
+                   (spieler "Cindy Lindner" "6 kyu")   ; 123
+                   (spieler "Ilona Crispien" "6 kyu")  ; 124
+                   (spieler "Felix Heisel" "6 kyu")    ; 125
+                   (spieler "Gero Hermsdorf" "7 kyu")  ; 126
+                   (spieler "Jonas Bassler" "10 kyu")  ; 127
+                   (spieler "Brian Blomlie" "13 kyu")) ; 128
+       (mannschaft "dangodo" "Dango Dortmund"
+                   (spieler "Malte Weiss" "3 dan")         ; 129
+                   (spieler "Alfred Ebert" "1 dan")        ; 130
+                   (spieler "Mathias Helms" "2 kyu")       ; 131
+                   (spieler "Arne Weiss" "4 kyu")          ; 132
+                   (spieler "Lars Gehrke" "9 kyu")         ; 133
+                   (spieler "Bernd Hillebrand" "15 kyu")   ; 134
+                   (spieler "Dominik Bleidom" "16 kyu")    ; 135
+                   (spieler "Barbara Reichwein" "25 kyu")) ; 136
+       (mannschaft "HanoWolf" "Hannover Wölfe"
+                   (spieler "Arne Steffens" "2 kyu") ; 137
+                   (spieler "Jürgen Breuer" "2 kyu") ; 138
+                   (spieler "Dierk Schmalz" "4 kyu") ; 139
+                   (spieler "Frank Tawussi" "7 kyu") ; 140
+                   (spieler "Ramona Wolf" "8 kyu")   ; 141
+                   (spieler "Lev Pak" "10 kyu")      ; 142
+                   (spieler "Tom Winkler" "13 kyu")) ; 143
+       (mannschaft "westf3br" "Westfalen 3"
+                   (spieler "David Ulbricht" "2 kyu")      ; 144
+                   (spieler "Bernhard Kraft" "3 kyu")      ; 145
+                   (spieler "Roland Michaelis" "3 kyu")    ; 146
+                   (spieler "Detlef Steuer" "3 kyu")       ; 147
+                   (spieler "Rainer Busch" "5 kyu")        ; 148
+                   (spieler "Henning Herbst" "5 kyu")      ; 149
+                   (spieler "Bartek Dyda" "9 kyu")         ; 150
+                   (spieler "David Vennemeier" "9 kyu")    ; 151
+                   (spieler "Dominique Desmaret" "9 kyu")) ;152
+       (mannschaft "HanseGoHB" "HanseGO Bremen"
+                   (spieler "Martin Osthaus" "5 kyu")      ; 153
+                   (spieler "Karsten Nikisch" "5 kyu")     ; 154
+                   (spieler "Kasim Cinar" "5 kyu")         ; 155
+                   (spieler "Martin Schubert" "6 kyu")     ; 156
+                   (spieler "Christoph Hertzberg" "7 kyu") ; 157
+                   (spieler "René Tammen" "9 kyu")         ; 158
+                   (spieler "Johannes Kopmann" "10 kyu"))  ; 159
+       (mannschaft "tonshi" "Tonshi Wuppertal"
+                   (spieler "Rafael Czernia" "1 kyu")       ; 160
+                   (spieler "Hellmuth Schomberg" "1 kyu")   ; 161
+                   (spieler "Hildegard Puttkammer" "1 kyu") ; 162
+                   (spieler "Erik Schweitzer" "4 kyu")      ; 163
+                   (spieler "Andreas Jochheim" "5 kyu")     ; 164
+                   (spieler "Fabian Dahmen" "11 kyu")       ; 165
+                   (spieler "Adrian Winter" "15 kyu")       ; 166
+                   (spieler "Sascha Wiese" "17 kyu"))       ; 167
+       (mannschaft "rakuLang" "raku Langerwehe"
+                   (spieler "Heinrich Walter" "4 kyu")     ; 168
+                   (spieler "Leon Lewald" "11 kyu")        ; 169
+                   (spieler "Philip Hermanns" "12 kyu")    ; 170
+                   (spieler "Lena Niederau" "14 kyu")      ; 171
+                   (spieler "Tim Feldhaus" "16 kyu")       ; 172
+                   (spieler "Finn-Luca Simon" "17 kyu")))) ; 173
