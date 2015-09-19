@@ -190,9 +190,20 @@
                    (spieler "Adrian Winter" "15 kyu")       ; 166
                    (spieler "Sascha Wiese" "17 kyu"))       ; 167
        (mannschaft "rakuLang" "raku Langerwehe"
-                   (spieler "Heinrich Walter" "4 kyu")     ; 168
-                   (spieler "Leon Lewald" "11 kyu")        ; 169
-                   (spieler "Philip Hermanns" "12 kyu")    ; 170
-                   (spieler "Lena Niederau" "14 kyu")      ; 171
-                   (spieler "Tim Feldhaus" "16 kyu")       ; 172
-                   (spieler "Finn-Luca Simon" "17 kyu")))) ; 173
+                   (spieler "Heinrich Walter" "4 kyu")   ; 168
+                   (spieler "Leon Lewald" "11 kyu")      ; 169
+                   (spieler "Philip Hermanns" "12 kyu")  ; 170
+                   (spieler "Lena Niederau" "14 kyu")    ; 171
+                   (spieler "Tim Feldhaus" "16 kyu")     ; 172
+                   (spieler "Finn-Luca Simon" "17 kyu")) ; 173
+       (BEGEGNUNG "Jena3" "DD2Brett")
+       (BEGEGNUNG "GI2Brett" "ajitier")
+       (BEGEGNUNG "lemming" "AGruKi")
+       (BEGEGNUNG "erding0" "steinfux2")
+       (BEGEGNUNG "LeiPaLei0" "MV2Brett")
+       (BEGEGNUNG "HanseGoHB" "westf3br")
+       (BEGEGNUNG "rakuLang" "tonshi")
+       (BEGEGNUNG "Fa[]" "Zyklop")
+       (BEGEGNUNG "HanoWolf" "dangodo")
+       (BEGEGNUNG "TuebStL" "hhhafen")
+       (BEGEGNUNG "haspa0" "steinfux3")))
