@@ -31,6 +31,15 @@
                     (make-hash-table :test #'equal))))
   (reset-tabellen liga))
 
+(defun liga-runde-mannschaften (liga runde)
+  (aref (liga-mannschaften liga) runde))
+
+(defun liga-runde-mannschafts-kuerzel (liga runde)
+  (hash-table-keys (liga-runde-mannschaften liga runde)))
+
+(defun liga-runde-mannschaft (liga runde kuerzel)
+  (gethash kuerzel (liga-runde-mannschaften liga runde)))
+
 (defun liga-begegnungen (liga runde)
   (liga-round-events liga runde :in))
 

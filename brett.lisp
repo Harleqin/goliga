@@ -49,10 +49,11 @@ on the REPL)."
 
 (defun format-brett-lmo (brett left-mannschaft right-mannschaft)
   (flet ((spieler-or-else (index mannschaft)
-           (if (null index)
-               "kampflos"
-               (format-spieler-lmo (aref (mannschaft-spieler mannschaft)
-                                         index)))))
+           (switch (index :test #'equal)
+             (nil "kampflos")
+             ('t "N.N.")
+             (t (format-spieler-lmo (aref (mannschaft-spieler mannschaft)
+                                          index))))))
     (if brett
         (concatenate 'string
                      (spieler-or-else (brett-left-spieler brett)
