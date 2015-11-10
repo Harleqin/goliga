@@ -127,7 +127,7 @@
                    (spieler "Jonas Kapitzke" "9 kyu")        ; 110
                    (spieler "Mario Di Schiena" "9 kyu")      ; 111
                    (spieler "Mira Gronau" "18 kyu"))         ; 112
-       (mannschaft "hhhafen" "Hamburg Hafen"
+       (mannschaft "hhhafen" "Hamburger Hafen"
                    (spieler "Timo Kreuzer" "1 dan")          ; 113
                    (spieler "Claus Albermann" "1 dan")       ; 114
                    (spieler "Peter Schildberg" "2 kyu")      ; 115
@@ -146,13 +146,14 @@
                    (spieler "Jonas Bassler" "10 kyu")  ; 127
                    (spieler "Brian Blomlie" "13 kyu")) ; 128
        (mannschaft "dangodo" "Dango Dortmund"
-                   (spieler "Malte Weiss" "3 dan")         ; 129
-                   (spieler "Alfred Ebert" "1 dan")        ; 130
-                   (spieler "Mathias Helms" "2 kyu")       ; 131
-                   (spieler "Arne Weiss" "4 kyu")          ; 132
-                   (spieler "Lars Gehrke" "9 kyu")         ; 133
-                   (spieler "Bernd Hillebrand" "15 kyu")   ; 134
-                   (spieler "Dominik Bleidom" "16 kyu")    ; 135
+                   (spieler "Malte Weiß" "3 dan")        ; 129
+                   (spieler "Alfred Ebert" "1 dan")      ; 130
+                   (spieler "Mathias Helms" "2 kyu")     ; 131
+                   (spieler "Arne Weiss" "4 kyu")        ; 132
+                   (spieler "Lars Gehrke" "9 kyu")       ; 133
+                   (spieler "Bernd Hillebrand" "15 kyu") ; 134
+                   (spieler "Dominik Bleidorn" "16 kyu") ; 135
+                   (spieler "André Schneider" "18 kyu")
                    (spieler "Barbara Reichwein" "25 kyu")) ; 136
        (mannschaft "HanoWolf" "Hannover Wölfe"
                    (spieler "Arne Steffens" "2 kyu") ; 137
@@ -172,7 +173,7 @@
                    (spieler "Bartek Dyda" "9 kyu")         ; 150
                    (spieler "David Vennemeier" "9 kyu")    ; 151
                    (spieler "Dominique Desmaret" "9 kyu")) ;152
-       (mannschaft "HanseGoHB" "HanseGO Bremen"
+       (mannschaft "HanseGo2" "HanseGO Bremen 2"
                    (spieler "Martin Osthaus" "5 kyu")      ; 153
                    (spieler "Karsten Nikisch" "5 kyu")     ; 154
                    (spieler "Kasim Cinar" "5 kyu")         ; 155
@@ -196,14 +197,154 @@
                    (spieler "Lena Niederau" "14 kyu")    ; 171
                    (spieler "Tim Feldhaus" "16 kyu")     ; 172
                    (spieler "Finn-Luca Simon" "17 kyu")) ; 173
-       (BEGEGNUNG "Jena3" "DD2Brett")
-       (BEGEGNUNG "GI2Brett" "ajitier")
-       (BEGEGNUNG "lemming" "AGruKi")
-       (BEGEGNUNG "erding0" "steinfux2")
-       (BEGEGNUNG "LeiPaLei0" "MV2Brett")
-       (BEGEGNUNG "HanseGoHB" "westf3br")
-       (BEGEGNUNG "rakuLang" "tonshi")
-       (BEGEGNUNG "Fa[]" "Zyklop")
-       (BEGEGNUNG "HanoWolf" "dangodo")
-       (BEGEGNUNG "TuebStL" "hhhafen")
-       (BEGEGNUNG "haspa0" "steinfux3")))
+       (BEGEGNUNG "Jena3" "DD2Brett"
+                  (BRETT 2 2 "0:2")
+                  (BRETT 3 4 "0:2")
+                  (BRETT 4 5 "2:0")
+                  (BRETT 5 6 "2:0"))
+       (BEGEGNUNG "GI2Brett" "ajitier"
+                  (BRETT 0 0 "0:2")
+                  (BRETT 2 1 "0:2")
+                  (BRETT 3 3 "0:2") 
+                  (BRETT 4 6 "0:2"))
+       (BEGEGNUNG "lemming" "AGruKi"
+                  (BRETT 0 1 "2:0" "(Mi)")
+                  (BRETT 2 2 "2:0")
+                  (BRETT 3 3 "2:0")
+                  (BRETT 6 4 "2:0"))
+       (BEGEGNUNG "erding0" "steinfux2"
+                  (BRETT 0 1 "2:0")
+                  (BRETT 1 4 "2:0")
+                  (BRETT 2 5 "2:0")
+                  (BRETT 5 6 "0:2"))
+       (BEGEGNUNG "LeiPaLei0" "MV2Brett"
+                  (BRETT 0 0 "0:2")
+                  (BRETT 1 1 "0:2")
+                  (BRETT 5 3 "0:2")
+                  (BRETT 8 4 "0:2"))
+       (BEGEGNUNG "HanseGo2" "westf3br"
+                  (BRETT 2 1 "0:2" "Mi")
+                  (BRETT 4 3 "2:0" "Mi 21:30")
+                  (BRETT 5 4 "2:0")
+                  (BRETT 6 5 "2:0"))
+       (BEGEGNUNG "rakuLang" "tonshi"
+                  (BRETT 1 1 "0:2")
+                  (BRETT 2 2 "0:2")
+                  (BRETT 3 3 "0:2")
+                  (BRETT 4 7 "0:2"))
+       (BEGEGNUNG "Fa[]" "Zyklop"
+                  (BRETT 2 0 "0:2")
+                  (BRETT 3 1 "0:2")
+                  (BRETT 4 2 "2:0")
+                  (BRETT 5 3 "0:2"))
+       (BEGEGNUNG "HanoWolf" "dangodo"
+                  (BRETT 0 0 "0:2")
+                  (BRETT 2 2 "0:2")
+                  (BRETT 3 4 "2:0")
+                  (BRETT 5 6 "2:0"))
+       (BEGEGNUNG "TuebStL" "hhhafen"
+                  (BRETT 0 2 "0:2")
+                  (BRETT 2 3 "0:2")
+                  (BRETT 4 4 "2:0")
+                  (BRETT 6 8 "0:2"))
+       (BEGEGNUNG "haspa0" "steinfux3"
+                  (BRETT 0 0 "0:2")
+                  (BRETT 1 2 "2:0")
+                  (BRETT 2 3 "0:2")
+                  (BRETT 4 4 "0:2" "19:30")))
+      (runde
+       (BEGEGNUNG "Zyklop" "Jena3"
+                  (BRETT 0 2 "2:0")
+                  (BRETT 1 4 "2:0")
+                  (BRETT 2 5 "2:0")
+                  (BRETT 3 6 "2:0"))
+       (BEGEGNUNG "steinfux2" "haspa0"
+                  (BRETT 0 0 "0:2")
+                  (BRETT 1 1 "2:0")
+                  (BRETT 4 2 "2:0")
+                  (BRETT 6 6 "2:0"))
+       (BEGEGNUNG "AGruKi" "GI2Brett"
+                  (BRETT 2 0 "2:0")
+                  (BRETT 3 4 "0:2")
+                  (BRETT 4 5 "0:2")
+                  (BRETT 6 7 "0:2"))
+       (BEGEGNUNG "hhhafen" "HanseGo2"
+                  (BRETT 4 1 "0:2")
+                  (BRETT 5 2 "0:2")
+                  (BRETT 7 5 "0:2")
+                  (BRETT 8 6 "2:0"))
+       (BEGEGNUNG "steinfux3" "erding0"
+                  (BRETT 1 0 "0:2")
+                  (BRETT 2 1 "0:2")
+                  (BRETT 3 2 "0:2")
+                  (BRETT 5 3 "0:2"))
+       (BEGEGNUNG "westf3br" "Fa[]"
+                  (BRETT 0 1 "2:0")
+                  (BRETT 3 3 "0:2")
+                  (BRETT 4 4 "0:2")
+                  (BRETT 6 7 "0:2"))
+       (BEGEGNUNG "ajitier" "tonshi"
+                  (BRETT 0 0 "2:0")
+                  (BRETT 1 2 "2:0")
+                  (BRETT 2 5 "2:0")
+                  (BRETT 3 NIL "2:!"))
+       (BEGEGNUNG "MV2Brett" "lemming"
+                  (BRETT 0 0 "2:0")
+                  (BRETT 1 2 "2:0")
+                  (BRETT 2 3 "2:0")
+                  (BRETT 3 5 "1:1"))
+       (BEGEGNUNG "DD2Brett" "HanoWolf"
+                  (BRETT 2 0 "2:0")
+                  (BRETT 3 1 "0:2")
+                  (BRETT 4 5 "2:0")
+                  (BRETT 5 6 "2:0"))
+       (BEGEGNUNG "dangodo" "TuebStL"
+                  (BRETT 2 0 "2:0")
+                  (BRETT 3 2 "0:2")
+                  (BRETT 5 4 "2:0")
+                  (BRETT 7 5 "0:2"))
+       (BEGEGNUNG "rakuLang" "LeiPaLei0"
+                  (BRETT 1 1 "0:2")
+                  (BRETT 2 6 "2:0")
+                  (BRETT 3 7 "0:2")
+                  (BRETT 5 8 "0:2")))
+      (runde
+       (BEGEGNUNG "Zyklop" "erding0")
+       (BEGEGNUNG "Jena3" "GI2Brett"
+                  (BRETT t 1)
+                  (BRETT t 2)
+                  (BRETT t 4)
+                  (BRETT t 5))
+       (BEGEGNUNG "steinfux3" "LeiPaLei0"
+                  (BRETT 0 t)
+                  (BRETT 1 t)
+                  (BRETT 3 t)
+                  (BRETT 4 t))
+       (BEGEGNUNG "MV2Brett" "ajitier")
+       (BEGEGNUNG "haspa0" "westf3br"
+                  (BRETT 1 1)
+                  (BRETT 2 3)
+                  (BRETT 5 4)
+                  (BRETT 6 5))
+       (BEGEGNUNG "steinfux2" "hhhafen"
+                  (BRETT 1 0)
+                  (BRETT 3 3)
+                  (BRETT 4 5)
+                  (BRETT 6 8))
+       (BEGEGNUNG "tonshi" "Fa[]")
+       (BEGEGNUNG "lemming" "dangodo"
+                  (BRETT 1 0)
+                  (BRETT 2 3)
+                  (BRETT 3 4)
+                  (BRETT 5 8))
+       (BEGEGNUNG "AGruKi" "rakuLang"
+                  (BRETT 1 1)
+                  (BRETT 2 2)
+                  (BRETT 3 3)
+                  (BRETT 5 4))
+       (BEGEGNUNG "HanoWolf" "TuebStL")
+       (BEGEGNUNG "HanseGo2" "DD2Brett"
+                  (BRETT t 0)
+                  (BRETT t 1)
+                  (BRETT t 2)
+                  (BRETT t 3))))
