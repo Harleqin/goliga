@@ -309,17 +309,21 @@
                   (BRETT 3 7 "0:2")
                   (BRETT 5 8 "0:2")))
       (runde
-       (BEGEGNUNG "Zyklop" "erding0")
+       (BEGEGNUNG "Zyklop" "erding0"
+                  (BRETT t 0)
+                  (BRETT t 1)
+                  (BRETT t 2)
+                  (BRETT t 3))
        (BEGEGNUNG "Jena3" "GI2Brett"
                   (BRETT t 1)
                   (BRETT t 2)
                   (BRETT t 4)
                   (BRETT t 5))
        (BEGEGNUNG "steinfux3" "LeiPaLei0"
-                  (BRETT 0 t)
-                  (BRETT 1 t)
-                  (BRETT 3 t)
-                  (BRETT 4 t))
+                  (BRETT 0 0)
+                  (BRETT 1 2)
+                  (BRETT 3 3)
+                  (BRETT 4 4))
        (BEGEGNUNG "MV2Brett" "ajitier")
        (BEGEGNUNG "haspa0" "westf3br"
                   (BRETT 1 1)
@@ -344,7 +348,7 @@
                   (BRETT 5 4))
        (BEGEGNUNG "HanoWolf" "TuebStL")
        (BEGEGNUNG "HanseGo2" "DD2Brett"
-                  (BRETT t 0)
-                  (BRETT t 1)
-                  (BRETT t 2)
-                  (BRETT t 3))))
+                  (BRETT 0 0)
+                  (BRETT 2 1)
+                  (BRETT 5 2)
+                  (BRETT 6 3))))
