@@ -55,14 +55,18 @@ on the REPL)."
              (t (format-spieler-lmo (aref (mannschaft-spieler mannschaft)
                                           index))))))
     (if brett
-        (concatenate 'string
-                     (spieler-or-else (brett-left-spieler brett)
-                                      left-mannschaft)
-                     " – "
-                     (spieler-or-else (brett-right-spieler brett)
-                                      right-mannschaft)
-                     " "
-                     (format-result-lmo (brett-result brett)))
+        (with-output-to-string (*standard-output*)
+          (princ (spieler-or-else (brett-left-spieler brett)
+                                  left-mannschaft))
+          (princ " — ")
+          (princ (spieler-or-else (brett-right-spieler brett)
+                                  right-mannschaft))
+          (when (brett-result brett)
+            (princ " ")
+            (princ (format-result-lmo (brett-result brett))))
+          (when (brett-info brett)
+            (princ " ")
+            (princ (brett-info brett))))
         "N.N. – N.N.")))
 
 (defun format-result-lmo (result)
