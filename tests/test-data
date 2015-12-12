@@ -407,9 +407,9 @@
                   (BRETT 7 8 "2:0"))
        (BEGEGNUNG "ajitier" "Zyklop"
                   (BRETT 0 0 "2:0")
-                  (BRETT 2 1 "2:0")
+                  (BRETT 2 1 "0:2")
                   (BRETT 3 2 "2:0")
-                  (BRETT 5 3 "2:0"))
+                  (BRETT 5 3 "0:2"))
        (BEGEGNUNG "lemming" "HanoWolf"
                   (BRETT 0 0 "2:0")
                   (BRETT 2 2 "0:2")
