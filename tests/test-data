@@ -366,10 +366,10 @@
                   (BRETT 5 3 "0:2")))
       (runde
        (BEGEGNUNG "Fa[]" "HanseGo2"
-                  (BRETT t 1)
-                  (BRETT t 2)
-                  (BRETT t 5)
-                  (BRETT t 6))
+                  (BRETT 3 1 "2:0")
+                  (BRETT 4 2 "2:0")
+                  (BRETT 5 5 "2:0")
+                  (BRETT 6 6 "2:0"))
        (BEGEGNUNG "rakuLang" "haspa0"
                   (BRETT 0 1 "2:0")
                   (BRETT 3 2 "0:2")
