@@ -508,7 +508,11 @@
                   (BRETT 1 4 "0:2")
                   (BRETT 2 5 "2:0")
                   (BRETT 3 6 "2:0"))
-       (BEGEGNUNG "MV2Brett" "steinfux3")
+       (BEGEGNUNG "MV2Brett" "steinfux3"
+                  (BRETT 0 0 "2:0")
+                  (BRETT 2 3 "0:2")
+                  (BRETT 3 4 "2:0")
+                  (BRETT 4 7 "0:2"))
        (BEGEGNUNG "AGruKi" "DD2Brett"
                   (BRETT 1 1 "0:2")
                   (BRETT 2 3 "2:0")
@@ -539,7 +543,11 @@
                   (BRETT 1 2 "2:0")
                   (BRETT 2 3 "2:0")
                   (BRETT 3 5 "2:0"))
-       (BEGEGNUNG "haspa0" "TuebStL")
+       (BEGEGNUNG "haspa0" "TuebStL"
+                  (BRETT 1 0 "0:2")
+                  (BRETT 2 2 "0:2")
+                  (BRETT 4 4 "0:2")
+                  (BRETT 5 6 "2:0"))
        (BEGEGNUNG "erding0" "ajitier"
                   (BRETT 0 0 "0:2")
                   (BRETT 1 1 "2:0")
