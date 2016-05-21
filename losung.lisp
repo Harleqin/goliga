@@ -50,11 +50,12 @@ table-row-farben."
     (* mult (- (length farben)
                (* 2 (count farbe farben))))))
 
-(defgeneric calc-combos (liga runde)
-  (:method ((liga liga) (runde integer))
+(defgeneric calc-combos (liga runde &key pre-pairs)
+  (:method ((liga liga) (runde integer) &key pre-pairs)
     "Returns two values: first a list of three-element lists containing an index
 for the left, an index for the right and the weight (the smaller the better);
-second a vector with mannschaft names at the used indices."
+second a vector with mannschaft names at the used indices.  PRE-PAIRS can be a
+list of two-element lists of mannschaft names indicating predetermined pairs."
     (let* ((table-rows (hash-table-values
                         (tabelle-mannschaft-values (liga-tabelle liga runde))))
            (mannschaften (map 'vector #'table-row-mannschaft table-rows))
@@ -64,14 +65,23 @@ second a vector with mannschaft names at the used indices."
                :for bs :on (rest table-rows)
                :append (loop
                           :for b :in bs
-                          :collect (multiple-value-bind (left right rating)
-                                       (rate-pair a b)
-                                     (when rating
-                                       (list (position left mannschaften
-                                                       :test #'equal)
-                                             (position right mannschaften
-                                                       :test #'equal)
-                                             rating))))))
+                          :collect
+                          (multiple-value-bind (left right rating)
+                              (rate-pair a b)
+                            (and rating
+                                 (notany (lambda (pre-pair)
+                                           (= 1 
+                                              (length
+                                               (intersection pre-pair
+                                                             (list left
+                                                                   right)
+                                                             :test #'equal))))
+                                         pre-pairs)
+                                 (list (position left mannschaften
+                                                 :test #'equal)
+                                       (position right mannschaften
+                                                 :test #'equal)
+                                       rating))))))
            (valid-combos (remove-if #'null combos))
            (normalized-combos (normalize-weights valid-combos)))
       (values normalized-combos mannschaften))))
@@ -102,8 +112,9 @@ second a vector with mannschaft names at the used indices."
 
 (defparameter *perl-match* "pl/mwmatch.pl")
 
-(defun make-losung (liga runde)
-  (multiple-value-bind (combos mannschaften) (calc-combos liga runde)
+(defun make-losung (liga runde &key pre-pairs)
+  (multiple-value-bind (combos mannschaften) (calc-combos liga runde
+                                                          :pre-pairs pre-pairs)
     (let* ((perl-input (make-perl-input combos))
            (process (sb-ext:run-program "perl"
                                         (list *perl-lib*
@@ -150,13 +161,14 @@ second a vector with mannschaft names at the used indices."
                             pair)))
           losung))
 
-(defun compile-losung (liga-file runde)
+(defun compile-losung (liga-file runde &key pre-pairs)
   "Reads the liga information from LIGA-FILE, takes the table before round RUNDE,
-and compiles a pairing for the next round from it.  Prints the table and the
+and compiles a pairing for the next round from it.  PRE-PAIRS is a list of
+two-element lists representing predetermined pairs.  Prints the table and the
 pairing to *standard-output* and returns the pairing in an sexp form suitable
 for insertion into a liga file."
   (let* ((liga (load-data liga-file))
-         (losung (make-losung liga runde)))
+         (losung (make-losung liga runde :pre-pairs pre-pairs)))
     (print-liga-tabelle liga runde)
     (print-losung losung liga runde)
     (losung-begegnungen losung)))

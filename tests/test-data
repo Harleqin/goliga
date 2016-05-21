@@ -552,4 +552,84 @@
                   (BRETT 0 0 "0:2")
                   (BRETT 1 1 "2:0")
                   (BRETT 2 2 "0:2")
-                  (BRETT 4 5 "2:0"))))
+                  (BRETT 4 5 "2:0")))
+      (runde
+       (BEGEGNUNG "steinfux2" "AGruKi"
+                  (BRETT 1 1 "2:0") (BRETT 5 2 "2:0")
+                  (BRETT 6 3 "2:0") (BRETT 8 6 "2:0"))
+       (BEGEGNUNG "Fa[]" "HanoWolf"
+                  (BRETT 1 0 "0:2") (BRETT 2 1 "0:2")
+                  (BRETT 3 2 "2:0") (BRETT 4 5 "2:0"))
+       (BEGEGNUNG "ajitier" "HanseGo2"
+                  (BRETT 0 1 "2:0") (BRETT 3 2 "2:0")
+                  (BRETT 5 5 "2:0") (BRETT 6 6 "0:2"))
+       (BEGEGNUNG "dangodo" "Zyklop"
+                  (BRETT 0 0 "2:0") (BRETT 1 1 "2:0")
+                  (BRETT 2 3 "2:0") (BRETT 3 4 "2:0"))
+       (BEGEGNUNG "haspa0" "MV2Brett"
+                  (BRETT 1 0 "0:2") (BRETT 2 1 "0:2")
+                  (BRETT NIL 2 "!:2") (BRETT 6 3 "0:2"))
+       (BEGEGNUNG "tonshi" "lemming"
+                  (BRETT 1 0 "2:0") (BRETT 3 2 "2:0")
+                  (BRETT 5 3 "2:0") (BRETT 7 5 "2:0"))
+       (BEGEGNUNG "GI2Brett" "erding0"
+                  (BRETT 0 0 "0:2") (BRETT 2 1 "0:2")
+                  (BRETT 3 3 "0:2") (BRETT 5 4 "0:2"))
+       (BEGEGNUNG "hhhafen" "steinfux3"
+                  (BRETT 1 3 "2:0") (BRETT 4 4 "!:2")
+                  (BRETT 5 5 "2:0") (BRETT 8 6 "0:2"))
+       (BEGEGNUNG "rakuLang" "Jena3"
+                  (BRETT 0 3 "2:0") (BRETT 2 5 "0:2")
+                  (BRETT 3 6 "0:2") (BRETT NIL 9 "!:2"))
+       (BEGEGNUNG "DD2Brett" "westf3br"
+                  (BRETT 0 1 "0:2") (BRETT 2 2 "0:2")
+                  (BRETT 3 5 "2:0") (BRETT 4 6 "2:0"))
+       (BEGEGNUNG "LeiPaLei0" "TuebStL"
+                  (BRETT 1 0 "0:2") (BRETT 2 3 "2:0")
+                  (BRETT 7 4 "0:2") (BRETT 8 NIL "2:!")))
+      (runde
+       (BEGEGNUNG "steinfux3" "rakuLang"
+                  (BRETT 0 0 "0:2") (BRETT 3 NIL "2:!")
+                  (BRETT 4 2 "2:0") (BRETT 5 NIL "2:!"))
+       (BEGEGNUNG "GI2Brett" "LeiPaLei0"
+                  (BRETT 0 0 "0:2") (BRETT 1 1 "0:2")
+                  (BRETT 2 2 "0:2") (BRETT 5 4 "0:2"))
+       (BEGEGNUNG "ajitier" "steinfux2"
+                  (BRETT 0 1 "2:0") (BRETT 1 4 "2:0")
+                  (BRETT 3 5 "2:0") (BRETT NIL 8 "!:2"))
+       (BEGEGNUNG "dangodo" "erding0"
+                  (BRETT 3 0 "0:2") (BRETT 6 1 "0:2")
+                  (BRETT 7 2 "0:2") (BRETT 8 5 "0:2"))
+       (BEGEGNUNG "Zyklop" "tonshi"
+                  (BRETT 0 1 "2:0") (BRETT 1 3 "2:0")
+                  (BRETT 2 5 "2:0") (BRETT 3 7 "2:0"))
+       (BEGEGNUNG "MV2Brett" "westf3br"
+                  (BRETT 0 0 "0:2") (BRETT 1 1 "0:2")
+                  (BRETT 3 4 "2:0") (BRETT t NIL "2:!"))
+       (BEGEGNUNG "Jena3" "haspa0"
+                  (BRETT 3 0 "2:0") (BRETT 5 1 "0:2")
+                  (BRETT 6 2 "2:0") (BRETT 9 4 "0:2"))
+       (BEGEGNUNG "Fa[]" "DD2Brett"
+                  (BRETT 1 1 "2:0") (BRETT 3 3 "0:2")
+                  (BRETT 4 4 "0:2") (BRETT 6 6 "2:0"))
+       (BEGEGNUNG "HanseGo2" "HanoWolf"
+                  (BRETT 2 0 "0:2") (BRETT NIL 2 "!:2")
+                  (BRETT 4 3 "0:2") (BRETT 6 6 "2:0"))
+       (BEGEGNUNG "lemming" "hhhafen"
+                  (BRETT 2 3 "0:2") (BRETT 3 4 "0:2")
+                  (BRETT 6 5 "2:0") (BRETT 7 7 "1:1"))
+       (BEGEGNUNG "AGruKi" "TuebStL"
+                  (BRETT 1 0 "0:2") (BRETT 2 2 "2:0")
+                  (BRETT 3 3 "0:2") (BRETT 4 6 "2:0")))
+      (runde
+       (BEGEGNUNG "TuebStL" "GI2Brett")
+       (BEGEGNUNG "lemming" "rakuLang")
+       (BEGEGNUNG "haspa0" "AGruKi")
+       (BEGEGNUNG "dangodo" "ajitier")
+       (BEGEGNUNG "DD2Brett" "steinfux3")
+       (BEGEGNUNG "westf3br" "steinfux2")
+       (BEGEGNUNG "Fa[]" "MV2Brett")
+       (BEGEGNUNG "erding0" "tonshi")
+       (BEGEGNUNG "Jena3" "HanseGo2")
+       (BEGEGNUNG "HanoWolf" "Zyklop")
+       (BEGEGNUNG "hhhafen" "LeiPaLei0")))
