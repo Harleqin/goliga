@@ -639,7 +639,7 @@
                   (BRETT 2 4 "2:0") (BRETT 3 6 "2:0"))
        (BEGEGNUNG "westf3br" "steinfux2"
                   (BRETT 1 1 "0:2") (BRETT 4 4 "2:0")
-                  (BRETT 5 5 "0:2") (BRETT 6 8 "0:2"))
+                  (BRETT 5 6 "0:2") (BRETT 6 8 "0:2"))
        (BEGEGNUNG "Fa[]" "MV2Brett"
                   (BRETT 1 0 "0:2") (BRETT 3 NIL "2:!")
                   (BRETT 5 3 "0:2") (BRETT 6 4 "2:0"))
