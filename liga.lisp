@@ -84,18 +84,16 @@
   (reset-tabellen liga)
   (setf (aref (liga-tabellen liga) 0)
         (next-tabelle nil (aref (liga-runden liga) 0)))
-  (loop
-    :for from :upfrom 0
-    :for to :upfrom 1 :below (1+ (liga-n-runden liga))
-    :do (setf (aref (liga-tabellen liga) to)
-              (next-tabelle (aref (liga-tabellen liga) from)
-                            (aref (liga-runden liga) from)))))
+  (loop :for from :upfrom 0
+        :for to :upfrom 1 :below (1+ (liga-n-runden liga))
+        :do (setf (aref (liga-tabellen liga) to)
+                  (next-tabelle (aref (liga-tabellen liga) from)
+                                (aref (liga-runden liga) from)))))
 
 (defun update-mannschaften (liga)
-  (loop
-    :for i :upfrom 0 :below (liga-n-runden liga)
-    :do (setf (aref (liga-mannschaften liga) i)
-              (next-mannschaften liga :from (1- i) :to i))))
+  (loop :for i :upfrom 0 :below (liga-n-runden liga)
+        :do (setf (aref (liga-mannschaften liga) i)
+                  (next-mannschaften liga :from (1- i) :to i))))
 
 (defun next-mannschaften (liga &key from to)
   (let ((next (if (not (minusp from))
@@ -107,10 +105,13 @@
         (setf (gethash (mannschaft-kuerzel m) next) m)))))
 
 (defun format-liga-begegnungen-lmo (liga runde
-                                    &optional (stream *standard-output*))
+                                    &key
+                                      (stream *standard-output*)
+                                      asciip)
   (dovector (begegnung (liga-begegnungen liga runde))
     (princ (format-begegnung-lmo begegnung
-                                 (aref (liga-mannschaften liga) runde))
+                                 (aref (liga-mannschaften liga) runde)
+                                 :asciip asciip)
            stream)
     (terpri)))
 
@@ -132,13 +133,12 @@
              (terpri)))
       (dotimes (r (liga-n-runden liga))
         (dovector (begegnung (liga-begegnungen liga r))
-          (loop
-             :for brett :across (begegnung-bretter begegnung)
-             :for cost := 2 :then 1
-             :when (result-left-penalty-p (brett-result brett))
-             :do (incf-sp (begegnung-left begegnung) r cost)
-             :when (result-right-penalty-p (brett-result brett))
-             :do (incf-sp (begegnung-right begegnung) r cost))))
+          (loop :for brett :across (begegnung-bretter begegnung)
+                :for cost := 2 :then 1
+                :when (result-left-penalty-p (brett-result brett))
+                  :do (incf-sp (begegnung-left begegnung) r cost)
+                :when (result-right-penalty-p (brett-result brett))
+                  :do (incf-sp (begegnung-right begegnung) r cost))))
       (format-line "Mannschaft"
                    (coerce (iota (liga-n-runden liga)) 'vector))
       (terpri)

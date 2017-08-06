@@ -60,36 +60,33 @@ list of two-element lists of mannschaft names indicating predetermined pairs."
                         (tabelle-mannschaft-values (liga-tabelle liga runde))))
            (mannschaften (map 'vector #'table-row-mannschaft table-rows))
            (combos
-            (loop
-               :for a :in table-rows
-               :for bs :on (rest table-rows)
-               :append (loop
-                          :for b :in bs
-                          :collect
-                          (multiple-value-bind (left right rating)
-                              (rate-pair a b)
-                            (and rating
-                                 (notany (lambda (pre-pair)
-                                           (= 1 
-                                              (length
-                                               (intersection pre-pair
-                                                             (list left
-                                                                   right)
-                                                             :test #'equal))))
-                                         pre-pairs)
-                                 (list (position left mannschaften
-                                                 :test #'equal)
-                                       (position right mannschaften
-                                                 :test #'equal)
-                                       rating))))))
+             (loop :for a :in table-rows
+                   :for bs :on (rest table-rows)
+                   :append (loop :for b :in bs
+                                 :collect
+                                 (multiple-value-bind (left right rating)
+                                     (rate-pair a b)
+                                   (and rating
+                                        (notany (lambda (pre-pair)
+                                                  (= 1 
+                                                     (length
+                                                      (intersection pre-pair
+                                                                    (list left
+                                                                          right)
+                                                                    :test #'equal))))
+                                                pre-pairs)
+                                        (list (position left mannschaften
+                                                        :test #'equal)
+                                              (position right mannschaften
+                                                        :test #'equal)
+                                              rating))))))
            (valid-combos (remove-if #'null combos))
            (normalized-combos (normalize-weights valid-combos)))
       (values normalized-combos mannschaften))))
 
 (defun normalize-weights (combos)
-  (let ((base (1+ (loop
-                    :for combo :in combos
-                    :minimize (third combo)))))
+  (let ((base (1+ (loop :for combo :in combos
+                        :minimize (third combo)))))
     (mapcar (lambda (combo)
               (list (first combo)
                     (second combo)
@@ -100,13 +97,12 @@ list of two-element lists of mannschaft names indicating predetermined pairs."
   (format nil "[~{[~{~a~^,~}]~^,~}]" combos))
 
 (defun parse-perl-output (stream)
-  (loop
-    :for line := (read-line stream nil)
-    :while line
-    :when (find #\, line :test #'equal)
-    :collect (mapcar #'parse-integer
-                     (split-sequence #\, line
-                                     :test #'equal))))
+  (loop :for line := (read-line stream nil)
+        :while line
+        :when (find #\, line :test #'equal)
+          :collect (mapcar #'parse-integer
+                           (split-sequence #\, line
+                                           :test #'equal))))
 
 (defparameter *perl-lib* "-Ipl/lib")
 
@@ -132,10 +128,9 @@ list of two-element lists of mannschaft names indicating predetermined pairs."
                                 (sort-from-combos pair combos)))
                       pairs)))
           (with-open-stream (perl-err (sb-ext:process-error process))
-            (loop
-              :for line := (read-line perl-err nil)
-              :while line
-              :do (print line *error-output*))
+            (loop :for line := (read-line perl-err nil)
+                  :while line
+                  :do (print line *error-output*))
             (finish-output))))))
 
 (defun sort-from-combos (pair combos)

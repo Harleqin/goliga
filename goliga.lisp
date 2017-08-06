@@ -15,10 +15,9 @@
     (assert (stringp description))
     (assert (typep n-rounds '(integer 0 *)))
     (let ((liga (register-liga name description n-rounds)))
-      (loop
-        :for runde-data :in runden
-        :for i :below n-rounds
-        :do (enter-runde liga i runde-data))
+      (loop :for runde-data :in runden
+            :for i :below n-rounds
+            :do (enter-runde liga i runde-data))
       (update-tabellen liga)
       (update-mannschaften liga)
       liga)))

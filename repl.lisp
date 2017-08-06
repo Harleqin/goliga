@@ -6,39 +6,35 @@
     (flet ((parse-mannschaft (kuerzel)
              (liga-runde-mannschaft liga runde kuerzel)))
       (format *query-io* "~{ ~a~%~}~%"
-              (loop
-                 :for k :in (sort mannschafts-kuerzel #'string-lessp)
-                 :collect k))
-      (loop
-         :for line := (progn
-                        (format *query-io* "Mannschaften> ")
-                        (read-line *query-io*))
-         :while (plusp (length line))
-         :collect (register-groups-bind ((#'parse-mannschaft left right))
-                      ("(\\S+)\\s+(\\S+)" line)
-                    (loop
-                       :for (left-spieler . right-spieler)
-                       :in (zip (mannschaft-spieler left)
-                                (mannschaft-spieler right))
-                       :for i :upfrom 0
-                       :do (format *query-io*
-                                   "~4a~28a~8@a    ~28a~8@a~%"
-                                   i
-                                   (format-spieler-name left-spieler)
-                                   (format-spieler-rang left-spieler)
-                                   (format-spieler-name right-spieler)
-                                   (format-spieler-rang right-spieler)))
-                    (list* 'begegnung
-                           (mannschaft-kuerzel left)
-                           (mannschaft-kuerzel right)
-                           (loop
-                              :repeat +bretter/begegnung+
-                              :for line := (split "\\s+" (read-line *query-io*)
-                                                  :limit 4)
-                              :collect (list* 'brett
-                                              (maybe-parse-integer (first line))
-                                              (maybe-parse-integer (second line))
-                                              (nthcdr 2 line)))))))))
+              (loop :for k :in (sort mannschafts-kuerzel #'string-lessp)
+                    :collect k))
+      (loop :for line := (progn
+                           (format *query-io* "Mannschaften> ")
+                           (read-line *query-io*))
+            :while (plusp (length line))
+            :collect (register-groups-bind ((#'parse-mannschaft left right))
+                         ("(\\S+)\\s+(\\S+)" line)
+                       (loop :for (left-spieler . right-spieler)
+                               :in (zip (mannschaft-spieler left)
+                                        (mannschaft-spieler right))
+                             :for i :upfrom 0
+                             :do (format *query-io*
+                                         "~4a~28a~8@a    ~28a~8@a~%"
+                                         i
+                                         (format-spieler-name left-spieler)
+                                         (format-spieler-rang left-spieler)
+                                         (format-spieler-name right-spieler)
+                                         (format-spieler-rang right-spieler)))
+                       (list* 'begegnung
+                              (mannschaft-kuerzel left)
+                              (mannschaft-kuerzel right)
+                              (loop :repeat +bretter/begegnung+
+                                    :for line := (split "\\s+" (read-line *query-io*)
+                                                        :limit 4)
+                                    :collect (list* 'brett
+                                                    (maybe-parse-integer (first line))
+                                                    (maybe-parse-integer (second line))
+                                                    (nthcdr 2 line)))))))))
 
 (defun edit-begegnung-interactive (liga runde)
   (let ((begegnungen (liga-begegnungen liga runde)))

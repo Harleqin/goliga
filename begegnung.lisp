@@ -12,11 +12,10 @@
     (let ((begegnung (make-instance 'begegnung
                                     :left left
                                     :right right)))
-      (loop
-        :for brett-datum :in brett-data
-        :for i :below +bretter/begegnung+
-        :do (setf (aref (begegnung-bretter begegnung) i)
-                  (parse-brett brett-datum)))
+      (loop :for brett-datum :in brett-data
+            :for i :below +bretter/begegnung+
+            :do (setf (aref (begegnung-bretter begegnung) i)
+                      (parse-brett brett-datum)))
       begegnung)))
 
 (defun begegnung-punkte (begegnung)
@@ -33,21 +32,45 @@
                     (remove nil (mapcar #'result-right-points results))
                     :initial-value 0))))
 
-(defun format-begegnung-lmo (begegnung mannschaften)
+(defun format-begegnung-lmo (begegnung mannschaften &key asciip)
   (let* ((left-kuerzel (begegnung-left begegnung))
          (right-kuerzel (begegnung-right begegnung))
          (left (gethash left-kuerzel mannschaften))
-         (right (gethash right-kuerzel mannschaften)))
-    (format nil
-            "~a | ~a – ~a\\n\\n~{~a~^\\n~}"
-            (multiple-value-call #'format-begegnung-result-lmo
-              (begegnung-punkte begegnung))
-            (format-kuerzel-lmo left-kuerzel)
-            (format-kuerzel-lmo right-kuerzel)
-            (map 'list
-                 (lambda (brett)
-                   (format-brett-lmo brett left right))
-                 (begegnung-bretter begegnung)))))
+         (right (gethash right-kuerzel mannschaften))
+         (output (format nil
+                         "~a | ~a — ~a\\n\\n~{~a~^\\n~}"
+                         (multiple-value-call #'format-begegnung-result-lmo
+                           (begegnung-punkte begegnung))
+                         (format-kuerzel-lmo left-kuerzel)
+                         (format-kuerzel-lmo right-kuerzel)
+                         (map 'list
+                              (lambda (brett)
+                                (format-brett-lmo brett left right))
+                              (begegnung-bretter begegnung))))
+         (maybe-ascii-escaped-output (if asciip
+                                         (ascii-escape output)
+                                         output)))
+    (if (> (length maybe-ascii-escaped-output) (+ 255 6))
+        (concatenate 'string maybe-ascii-escaped-output " *ZU LANG*")
+        maybe-ascii-escaped-output)))
+
+(defun ascii-escape (string)
+  (reduce (lambda (input re-replacement)
+            (regex-replace-all (car re-replacement)
+                               input
+                               (cdr re-replacement)
+                               :preserve-case t))
+          '(("ä" . "ae")
+            ("ö" . "oe")
+            ("ü" . "ue")
+            ("ß" . "ss")
+            ("è" . "e")
+            ("é" . "e")
+            ("—" . "-")
+            ("„" . "\"")
+            ("“" . "\"")
+            ("”" . "\""))
+          :initial-value string))
 
 (defun format-begegnung-result-lmo (left right)
   (format nil "~a:~a" left right))

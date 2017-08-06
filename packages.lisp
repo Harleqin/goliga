@@ -4,6 +4,7 @@
   (:use #:cl
         #:alexandria
         #:cl-ppcre
-        #:split-sequence)
+        #:split-sequence
+        #:cl-who)
   (:export #:compile-losung
            #:load-data))

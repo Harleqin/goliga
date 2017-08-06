@@ -12,7 +12,8 @@
   :serial t
   :depends-on (#:alexandria
                #:cl-ppcre
-               #:split-sequence)
+               #:split-sequence
+               #:cl-who)
   :components ((:file "packages")
                (:file "base")
                (:file "constants")
@@ -26,7 +27,8 @@
                (:file "goliga")
                (:file "tabelle")
                (:file "losung")
-               (:file "repl"))
+               (:file "repl")
+               (:file "html"))
   :in-order-to ((test-op (test-op #:goliga/tests))))
 
 (defsystem #:goliga/tests

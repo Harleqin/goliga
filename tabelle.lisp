@@ -87,39 +87,37 @@ Mannschaften will be added, so we need only results."
         (right-bp 0)
         (left-sbp 0)
         (right-sbp 0))
-    (loop
-      :for result :across (remove-if #'null
-                                    (map 'vector #'brett-result
-                                         (remove-if #'null
-                                                    (begegnung-bretter begegnung))))
-      :for i :below +bretter/begegnung+
-      :do
-      (incf left-bp (result-left-points result))
-      (incf right-bp (result-right-points result))
-      (incf left-sbp (penalty-points (result-left-penalty-p result) i))
-      (incf right-sbp (penalty-points (result-right-penalty-p result) i))
-      (cond ((> (result-left-points result) (result-right-points result))
-             (incf (aref (table-row-wins left) i)))
-            ((> (result-right-points result) (result-left-points result))
-             (incf (aref (table-row-wins right) i))))
-      :finally
-      (multiple-value-bind (left-mp right-mp) (calc-mp left-bp right-bp)
-        (incf (table-row-mp left) left-mp)
-        (incf (table-row-bp left) left-bp)
-        (incf (table-row-mp right) right-mp)
-        (incf (table-row-bp right) right-bp)
-        (incf (table-row-straf-bp left) left-sbp)
-        (incf (table-row-straf-bp right) right-sbp)
-        (setf (table-row-straf-mp left)
-              (calc-straf-mp (table-row-straf-bp left))
-              (table-row-straf-mp right)
-              (calc-straf-mp (table-row-straf-bp right)))
-        (vector-push-extend (table-row-mannschaft left)
-                            (table-row-gegner right))
-        (vector-push-extend (table-row-mannschaft right)
-                            (table-row-gegner left))
-        (vector-push-extend :left (table-row-farben left))
-        (vector-push-extend :right (table-row-farben right))))
+    (loop :for result :across (remove-if #'null
+                                         (map 'vector #'brett-result
+                                              (remove-if #'null
+                                                         (begegnung-bretter begegnung))))
+          :for i :below +bretter/begegnung+
+          :do (incf left-bp (result-left-points result))
+              (incf right-bp (result-right-points result))
+              (incf left-sbp (penalty-points (result-left-penalty-p result) i))
+              (incf right-sbp (penalty-points (result-right-penalty-p result) i))
+              (cond ((> (result-left-points result) (result-right-points result))
+                     (incf (aref (table-row-wins left) i)))
+                    ((> (result-right-points result) (result-left-points result))
+                     (incf (aref (table-row-wins right) i))))
+          :finally
+             (multiple-value-bind (left-mp right-mp) (calc-mp left-bp right-bp)
+               (incf (table-row-mp left) left-mp)
+               (incf (table-row-bp left) left-bp)
+               (incf (table-row-mp right) right-mp)
+               (incf (table-row-bp right) right-bp)
+               (incf (table-row-straf-bp left) left-sbp)
+               (incf (table-row-straf-bp right) right-sbp)
+               (setf (table-row-straf-mp left)
+                     (calc-straf-mp (table-row-straf-bp left))
+                     (table-row-straf-mp right)
+                     (calc-straf-mp (table-row-straf-bp right)))
+               (vector-push-extend (table-row-mannschaft left)
+                                   (table-row-gegner right))
+               (vector-push-extend (table-row-mannschaft right)
+                                   (table-row-gegner left))
+               (vector-push-extend :left (table-row-farben left))
+               (vector-push-extend :right (table-row-farben right))))
     (values left right)))
 
 (defun penalty-points (penalty-p brett-n)
@@ -133,11 +131,10 @@ Mannschaften will be added, so we need only results."
 (defparameter *straf-mp-thresholds* (list 4 2))
 
 (defun calc-straf-mp (bp)
-  (loop
-    :for threshold :from (first *straf-mp-thresholds*)
-                   :by (second *straf-mp-thresholds*)
-    :while (>= bp threshold)
-    :count t))
+  (loop :for threshold :from (first *straf-mp-thresholds*)
+                       :by (second *straf-mp-thresholds*)
+        :while (>= bp threshold)
+        :count t))
 
 (defun copy-table-row (row)
   (make-instance 'table-row

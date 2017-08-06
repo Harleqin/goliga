@@ -1,10 +1,9 @@
 (in-package #:goliga)
 
 (defmacro dovector ((var vector &optional return-form) &body body)
-  `(loop
-     :for ,var :across ,vector
-     :do ,@body
-     :finally (return ,return-form)))
+  `(loop :for ,var :across ,vector
+         :do ,@body
+         :finally (return ,return-form)))
 
 (defun zip (seq0 seq1
             &key
