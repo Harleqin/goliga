@@ -1,19 +1,15 @@
-(in-package #:cl-user)
-
-(defpackage #:goliga/asdf
-  (:use #:cl
-        #:asdf))
-
-(in-package #:goliga/asdf)
+(in-package #:asdf-user)
 
 (defsystem #:goliga
   :author "Svante v. Erichsen <svante.v.erichsen@web.de>"
   :license "public domain"
   :serial t
   :depends-on (#:alexandria
+               #:cl-arrows
                #:cl-ppcre
-               #:split-sequence
-               #:cl-who)
+               #:cl-who
+               #:fare-csv
+               #:split-sequence)
   :components ((:file "packages")
                (:file "base")
                (:file "constants")

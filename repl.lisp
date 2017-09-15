@@ -63,3 +63,100 @@
              (plusp (length n-or-nil))
              (digit-char-p (aref n-or-nil 0)))
     (parse-integer n-or-nil)))
+
+(defun read-mannschaften-csv (filename)
+  "A parser for some dirty csv files generated from the dirty, dirty xlsx files
+on the Bundesliga page."
+  (flet ((start-of-mannschaft (line)
+           (find #\. (first line))))
+    (let ((csv (member "Aufstellungen"
+                       (fare-csv:read-csv-file filename :external-format :latin1)
+                       :key #'first
+                       :test #'equal)))
+      (loop :for mannschaften
+              := (member-if #'start-of-mannschaft csv)
+              :then (member-if #'start-of-mannschaft (rest mannschaften))
+            :while mannschaften
+            :collect (read-mannschaft mannschaften)))))
+
+(defun read-mannschaft (lol)
+  (list* 'mannschaft
+         (cadar lol)
+         (loop :for (n name nil nil nil rank) :in (rest lol)
+               :until (find #\. n)
+               :if (string/= n "")
+                 :collect (list 'spieler
+                                (munge-name name)
+                                (munge-rank rank)))))
+
+(defun munge-name (raw)
+  (if-let ((i (position #\, raw)))
+    (concatenate 'string
+                 (subseq raw (+ i 2))
+                 '(#\space)
+                 (subseq raw 0 i))
+    raw))
+
+(defun munge-rank (raw)
+  (format-rang (parse-rang raw)))
+
+(defun read-mannschaften-data (filename)
+  (with-open-file (in filename
+                      :direction :input)
+    (let ((*read-eval* nil))
+      (destructuring-bind (symbol name description n-rounds &rest runden)
+          (read in)
+        (declare (ignore symbol name description n-rounds))
+        (mapcan (lambda (runde)
+                  (remove 'mannschaft (rest runde)
+                          :key #'first
+                          :test-not #'eq))
+                runden)))))
+
+(defun rate-mannschaft (m)
+  (destructuring-bind (nil id name . spieler) m
+    (list id
+          name
+          (-<>> spieler
+                (subseq <> 0 5)
+                (mapcar #'third)
+                (mapcar #'parse-rang)
+                (mapcar #'rang-int)
+                (reduce #'+)))))
+
+(defun ordered-mannschaften (ms)
+  (-<>> ms
+        (mapcar #'rate-mannschaft)
+        (sort <> #'< :key #'third)))
+
+(defun falt-paare (ms)
+  (assert (evenp (length ms)))
+  (let ((l (/ (length ms) 2)))
+    (loop :for a :in ms
+          :and b :in (reverse ms)
+          :repeat l
+          :collect (shuffle (list a b)))))
+
+(defun data-out (paare)
+  (mapcar (lambda (paar)
+            (list* 'begegnung (mapcar #'first paar)))
+          paare))
+
+(defun email-out (paare)
+  (format t "~{~{~a — ~a~}~%~}"
+          (mapcar (lambda (paar)
+                    (mapcar #'second paar))
+                  paare)))
+
+(defun gather-emails (csv-file)
+  (let* ((csv (fare-csv:read-csv-file csv-file :external-format :latin-1))
+         (liga-info (member "5.Liga" csv
+                            :test #'equal
+                            :key #'second))
+         (email-column (mapcar #'sixth liga-info)))
+    (remove-if-not (lambda (cell)
+                     (find #\@ cell))
+                   email-column)))
+
+(defun format-aliases (alias emails &optional (stream t))
+  (format stream "alias ~a ~{~a \\~%          ~}" alias emails))
