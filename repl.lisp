@@ -60,9 +60,13 @@
 
 (defun maybe-parse-integer (n-or-nil)
   (when (and n-or-nil
-             (plusp (length n-or-nil))
-             (digit-char-p (aref n-or-nil 0)))
-    (parse-integer n-or-nil)))
+             (plusp (length n-or-nil)))
+    (cond ((digit-char-p (aref n-or-nil 0))
+           (parse-integer n-or-nil))
+          ((string-equal n-or-nil "t")
+           t)
+          (t
+           nil))))
 
 (defun read-mannschaften-csv (filename)
   "A parser for some dirty csv files generated from the dirty, dirty xlsx files
