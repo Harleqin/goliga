@@ -68,6 +68,18 @@
           (t
            nil))))
 
+(defun format-mannschaft (liga runde kuerzel)
+  (let ((mannschaft (liga-runde-mannschaft liga runde kuerzel)))
+    (with-output-to-string (s)
+      (loop :for spieler :across (mannschaft-spieler mannschaft)
+            :for i :upfrom 0
+            :do (format s "~a ~a ~a~%"
+                        i
+                        (format-spieler-name spieler)
+                        (format-spieler-rang spieler))))))
+
+;;; Saisonvorbereitung
+
 (defun read-mannschaften-csv (filename)
   "A parser for some dirty csv files generated from the dirty, dirty xlsx files
 on the Bundesliga page."
