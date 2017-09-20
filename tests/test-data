@@ -156,7 +156,11 @@
                    (SPIELER "Alexander Hildebrandt" "8 kyu")
                    (SPIELER "Paul Grünler" "10 kyu")
                    (SPIELER "Lydia Blümel" "10 kyu"))
-       (BEGEGNUNG "FR2Brett" "Lemming")
+       (BEGEGNUNG "FR2Brett" "Lemming"
+                  (BRETT T 1)
+                  (BRETT T 4)
+                  (BRETT T 5)
+                  (BRETT T 6))
        (BEGEGNUNG "dd3brett" "FPlat2"
                   (BRETT 2 0)
                   (BRETT 3 1)
