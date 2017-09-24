@@ -20,6 +20,11 @@ higher the better, nil if they already have played each other."
                             (effective-bp right)
                             :power 2
                             :mult 10)
+               ;; Reihenfolge (links/rechts) ist egal
+               (power-splay (table-row-staerke left)
+                            (table-row-staerke right)
+                            :power 2
+                            :mult 1/20)
                (rate-farbe left :left 2)
                (rate-farbe right :right 2)))))
 
@@ -39,9 +44,13 @@ often than :left."
 
 (defun power-close (left-points right-points &key power mult)
   "Returns a value that is higher if the numbers are close."
-  (- (* mult
-        (expt (abs (- left-points right-points))
-              power))))
+  (- (power-splay left-points right-points :power power :mult mult)))
+
+(defun power-splay (left-points right-points &key power mult)
+  "Returns a value that is higher if the number are farther apart."
+  (* mult
+     (expt (abs (- left-points right-points))
+           power)))
 
 (defun rate-farbe (table-row farbe mult)
   "Returns a value that is higher if the farbe is less often in the

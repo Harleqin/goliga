@@ -14,6 +14,9 @@
   ((mannschaft :initarg :mannschaft
                :reader table-row-mannschaft
                :documentation "Mannschaft-kuerzel")
+   (staerke :initarg :staerke
+            :reader table-row-staerke
+            :documentation "Sum of strength of the first five spieler")
    (mp :initarg :mp
        :initform 0
        :accessor table-row-mp)
@@ -59,7 +62,8 @@ first round, we only need the Mannschaften."
         (setf (gethash (mannschaft-kuerzel event)
                        (tabelle-mannschaft-values tabelle))
               (make-instance 'table-row
-                             :mannschaft (mannschaft-kuerzel event)))))))
+                             :mannschaft (mannschaft-kuerzel event)
+                             :staerke (mannschaft-staerke event)))))))
 
 (defmethod next-tabelle ((before tabelle) events
                          &aux (before-ht (tabelle-mannschaft-values before)))
@@ -139,6 +143,7 @@ Mannschaften will be added, so we need only results."
 (defun copy-table-row (row)
   (make-instance 'table-row
                  :mannschaft (table-row-mannschaft row)
+                 :staerke (table-row-staerke row)
                  :mp (table-row-mp row)
                  :bp (table-row-bp row)
                  :straf-mp (table-row-straf-mp row)
@@ -150,14 +155,16 @@ Mannschaften will be added, so we need only results."
 (defun print-tabelle (tabelle &optional (stream *standard-output*))
   (let ((table (multi-sort (hash-table-values (tabelle-mannschaft-values tabelle))
                            (list #'> :key #'effective-mp)
-                           (list #'> :key #'effective-bp))))
-    (format stream "~12a~4a~4a ~a~%~%" "Mannschaft" "MP" "BP" "Farben")
+                           (list #'> :key #'effective-bp)
+                           (list #'> :key #'table-row-staerke))))
+    (format stream "~12a~4a~4a ~8a ~a~%~%" "Mannschaft" "MP" "BP" "Farben" "Stärke")
     (dolist (row table)
-      (format stream "~12a~4a~4a ~a~%"
+      (format stream "~12a~4a~4a ~8a ~a~%"
               (table-row-mannschaft row)
               (effective-mp row)
               (effective-bp row)
-              (format-farben row)))))
+              (format-farben row)
+              (table-row-staerke row)))))
 
 (defun format-farben (row)
   (map 'string
