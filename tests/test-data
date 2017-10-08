@@ -198,9 +198,9 @@
                   (BRETT 5 6 "2:0")
                   (BRETT 7 8 "2:0")))
       (runde
-       (BEGEGNUNG "LeiPaLei0" "e3angels")
+       (BEGEGNUNG "LeiPaLei0" "e3angels" (BRETT T 0) (BRETT T 4) (BRETT T 6) (BRETT T 8))
        (BEGEGNUNG "ChDrachen" "FR2Brett")
-       (BEGEGNUNG "hhhafen" "dd3brett")
+       (BEGEGNUNG "hhhafen" "dd3brett" (BRETT 0 2) (BRETT 2 3) (BRETT 7 4) (BRETT 8 5))
        (BEGEGNUNG "FPlat2" "Jena2")
        (BEGEGNUNG "Detmold" "Lemming")
        (BEGEGNUNG "steinfux2" "flaleer2")
