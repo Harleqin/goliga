@@ -308,7 +308,7 @@
        (BEGEGNUNG "e3angels" "Saarland0" (BRETT 0 0 "0:2") (BRETT 1 1 "0:2") (BRETT 2 3 "0:2") (BRETT NIL 4 "!:2"))
        (BEGEGNUNG "MV2Brett" "tonshi")
        (BEGEGNUNG "ChDrachen" "flaleer2" (BRETT 0 2 "2:0") (BRETT 1 3 "2:0") (BRETT 2 6 "2:0") (BRETT 3 9 "2:0"))
-       (BEGEGNUNG "Jena2" "steinfux2" (BRETT 1 1) (BRETT 2 2) (BRETT 7 5) (BRETT 9 9))
+       (BEGEGNUNG "Jena2" "steinfux2" (BRETT 1 1 "2:0") (BRETT 2 2 "2:0") (BRETT 7 5 "0:2") (BRETT 9 9 "0:2"))
        (BEGEGNUNG "Detmold" "LeiPaLei0" (BRETT 0 0 "2:0") (BRETT 1 3 "2:0") (BRETT 4 5 "0:2") (BRETT 5 6 "0:2"))
        (BEGEGNUNG "FPlat2" "hhhafen" (BRETT 1 0 "0:2") (BRETT 5 4 "0:2") (BRETT 6 6 "0:2") (BRETT 7 7 "2:0"))
        (BEGEGNUNG "dd3brett" "Lemming" (BRETT 1 2 "2:0") (BRETT 3 3 "0:2") (BRETT 4 4 "0:2") (BRETT 5 6 "0:2"))))
