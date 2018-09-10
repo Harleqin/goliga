@@ -1,4 +1,4 @@
-(liga bl5 "Saison 2017/2018, 5. Bundesliga" 9
+(liga bl5 "Saison 2018/2019, 5. Bundesliga" 9
       (runde
        (MANNSCHAFT "JIGS" "Jena Int. Go-School"
                    (SPIELER "Youngsam Kim" "7 dan")
@@ -130,4 +130,11 @@
                    (SPIELER "Berta Freilo" "2 kyu")
                    (SPIELER "Carla Freilo" "3 kyu")
                    (SPIELER "Doerte Freilo" "4 kyu")
-                   (SPIELER "Emilia Freilo" "5 kyu"))))
+                   (SPIELER "Emilia Freilo" "5 kyu"))
+       (BEGEGNUNG "<Freilos>" "LeiPalEi")
+       (BEGEGNUNG "Fa[]" "MV2Brett")
+       (BEGEGNUNG "flaleer2" "steinfux2")
+       (BEGEGNUNG "GiessenB" "MaTo")
+       (BEGEGNUNG "e3angels" "BambusBO")
+       (BEGEGNUNG "Detmold" "Jena2")
+       (BEGEGNUNG "HanseGo2" "JIGS")))
