@@ -166,9 +166,10 @@ on the Bundesliga page."
 
 (defun gather-emails (csv-file)
   (let* ((csv (fare-csv:read-csv-file csv-file :external-format :latin-1))
-         (liga-info (member "5.Liga" csv
-                            :test #'equal
-                            :key #'second))
+         (liga-info (or (member "5.Liga" csv
+                                :test #'equal
+                                :key #'second)
+                        csv)))
          (email-column (mapcar #'sixth liga-info)))
     (remove-if-not (lambda (cell)
                      (find #\@ cell))
