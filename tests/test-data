@@ -24,6 +24,8 @@
                    (SPIELER "Manfred Althaus" "2 kyu")
                    (SPIELER "Nico Chiaro" "3 kyu")
                    (SPIELER "Marco Johannes" "7 kyu")
+                   (SPIELER "Linus Weidner" "10 kyu")
+                   (SPIELER "Clemens Grindler" "10 kyu")
                    (SPIELER "Regina Schober" "16 kyu"))
        (MANNSCHAFT "Jena2" "Jena 2"
                    (SPIELER "Sebastian Kiehne" "2 dan")
@@ -49,6 +51,7 @@
                    (SPIELER "Frank Wollny" "9 kyu"))
        (MANNSCHAFT "MV2Brett" "MV-United 2"
                    (SPIELER "Marcus Rölz" "1 kyu")
+                   (SPIELER "Tim Cech" "1 kyu")
                    (SPIELER "Hans-Eckart Lüthke" "1 kyu")
                    (SPIELER "Jan  Pagenkopf" "3 kyu")
                    (SPIELER "Jenny Dittmann" "4 kyu")
@@ -85,7 +88,7 @@
                    (SPIELER "Markus Nagler" "8 kyu")
                    (SPIELER "Jörg Leissen" "8 kyu")
                    (SPIELER "Max Herwig" "8 kyu")
-                   (SPIELER "ik Czech" "8 kyu")
+                   (SPIELER "Aik Czech" "8 kyu")
                    (SPIELER "André Börger" "14 kyu")
                    (SPIELER "Ivan Skrypov" "14 kyu"))
        (MANNSCHAFT "e3angels" "Empty 3Angels Berlin"
