@@ -173,7 +173,7 @@ on the Bundesliga page."
          (email-column (mapcar #'sixth liga-info)))
     (remove-if-not (lambda (cell)
                      (find #\@ cell))
-                   email-column)))
+                   email-column))
 
 (defun format-aliases (alias emails &optional (stream t))
   (format stream "alias ~a ~{~a \\~%          ~}" alias emails))
