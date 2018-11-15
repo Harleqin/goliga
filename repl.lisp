@@ -169,11 +169,11 @@ on the Bundesliga page."
          (liga-info (or (member "5.Liga" csv
                                 :test #'equal
                                 :key #'second)
-                        csv)))
+                        csv))
          (email-column (mapcar #'sixth liga-info)))
     (remove-if-not (lambda (cell)
                      (find #\@ cell))
-                   email-column))
+                   email-column)))
 
 (defun format-aliases (alias emails &optional (stream t))
   (format stream "alias ~a ~{~a \\~%          ~}" alias emails))
