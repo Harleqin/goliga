@@ -231,4 +231,12 @@
        (BEGEGNUNG "flaleer2" "HanseGo2" (BRETT 1 2 "2:0") (BRETT 2 4 "2:0") (BRETT 4 7 "2:0") (BRETT 5 8 "2:0"))
        (BEGEGNUNG "GiessenB" "BambusBO" (BRETT 0 3 "2:0") (BRETT 3 4 "0:2") (BRETT 4 5 "0:2") (BRETT 5 6 "2:0"))
        (BEGEGNUNG "e3angels" "Jena2" (BRETT 0 2 "2:0") (BRETT 1 6 "0:2") (BRETT 2 8 "0:2") (BRETT 3 9 "2:0"))
-       (BEGEGNUNG "<Freilos>" "MaTo" (brett t t "1:1") (brett t t "1:1") (brett t t "1:1") (brett t t "1:1"))))
+       (BEGEGNUNG "<Freilos>" "MaTo" (brett t t "1:1") (brett t t "1:1") (brett t t "1:1") (brett t t "1:1")))
+      (runde
+       (BEGEGNUNG "MaTo" "flaleer2")
+       (BEGEGNUNG "steinfux2" "Detmold")
+       (BEGEGNUNG "GiessenB" "JIGS")
+       (BEGEGNUNG "Jena2" "<Freilos>")
+       (BEGEGNUNG "Fa[]" "e3angels")
+       (BEGEGNUNG "BambusBO" "MV2Brett")
+       (BEGEGNUNG "HanseGo2" "LeiPalEi")))
