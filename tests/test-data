@@ -251,8 +251,8 @@
       (runde
        (BEGEGNUNG "BambusBO" "<Freilos>")
        (BEGEGNUNG "HanseGo2" "Jena2")
-       (BEGEGNUNG "Detmold" "GiessenB")
+       (BEGEGNUNG "Detmold" "GiessenB" (BRETT 0 1) (BRETT 1 2) (BRETT 3 3) (BRETT 6 5))
        (BEGEGNUNG "Fa[]" "MaTo")
-       (BEGEGNUNG "MV2Brett" "LeiPalEi")
+       (BEGEGNUNG "MV2Brett" "LeiPalEi" (BRETT T 0) (BRETT T 1) (BRETT T 4) (BRETT T 5))
        (BEGEGNUNG "JIGS" "flaleer2")
-       (BEGEGNUNG "e3angels" "steinfux2")))
+       (BEGEGNUNG "e3angels" "steinfux2" (BRETT 0 3) (BRETT 1 5) (BRETT 2 8) (BRETT 4 10))))
