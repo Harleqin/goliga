@@ -80,13 +80,14 @@
 
 ;;; Saisonvorbereitung
 
-(defun read-mannschaften-csv (filename)
+(defun read-mannschaften-csv (filename &key (external-format :utf-8))
   "A parser for some dirty csv files generated from the dirty, dirty xlsx files
 on the Bundesliga page."
   (flet ((start-of-mannschaft (line)
            (find #\. (first line))))
     (let ((csv (member "Aufstellungen"
-                       (fare-csv:read-csv-file filename :external-format :latin1)
+                       (fare-csv:read-csv-file filename
+                                               :external-format external-format)
                        :key #'first
                        :test #'equal)))
       (loop :for mannschaften
