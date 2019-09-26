@@ -22,7 +22,7 @@
                    (SPIELER "Markus Cunz" "7 kyu")
                    (SPIELER "Paul Berthold" "8 kyu")
                    (SPIELER "Frank Wollny" "9 kyu"))
-       (MANNSCHAFT "BumbusBO" "Bambus Bochum"
+       (MANNSCHAFT "BambusBO" "Bambus Bochum"
                    (SPIELER "Rolf Hempfling" "3 dan")
                    (SPIELER "Patrick Lehr" "1 kyu")
                    (SPIELER "Christoph Rottmann" "3 kyu")
@@ -91,6 +91,7 @@
                    (SPIELER "Sebastian Kenne" "13 kyu"))
        (MANNSCHAFT "Jena3" "Jena 3"
                    (SPIELER "Frank Markgraf" "1 dan")
+                   (SPIELER "Alexander Wenzel" "4 kyu")
                    (SPIELER "Martin Horatschek" "4 kyu")
                    (SPIELER "Markus Oehme" "5 kyu")
                    (SPIELER "Ricco Hoffmann" "6 kyu")
@@ -99,6 +100,7 @@
                    (SPIELER "Andreas Goral" "8 kyu")
                    (SPIELER "Peter Horatschek" "12 kyu")
                    (SPIELER "Tom Beran" "17 kyu")
+                   (SPIELER "Bastian Eisenbart" "17 kyu")
                    (SPIELER "Momme Spinder" "18 kyu"))
        (MANNSCHAFT "steinfux2" "Steinfuchs Rhein-Main 2"
                    (SPIELER "Rolf Sander" "2 kyu")
@@ -138,10 +140,10 @@
                    (SPIELER "Carla Freilo" "3 kyu")
                    (SPIELER "Doerte Freilo" "4 kyu")
                    (SPIELER "Emilia Freilo" "5 kyu"))
-       (BEGEGNUNG "steinfux2" "flaleer2")
-       (BEGEGNUNG "BumbusBO" "Jena3")
-       (BEGEGNUNG "Detmold" "hhhafen")
+       (BEGEGNUNG "steinfux2" "flaleer2" (BRETT T 1) (BRETT T 2) (BRETT T 3) (BRETT T 4))
+       (BEGEGNUNG "BambusBO" "Jena3" (BRETT 3 0) (BRETT 4 2) (BRETT 5 10) (BRETT 7 11))
+       (BEGEGNUNG "Detmold" "hhhafen" (BRETT 0 2) (BRETT 1 4) (BRETT 4 6) (BRETT 6 7))
        (BEGEGNUNG "MaTo" "KasselGZ")
-       (BEGEGNUNG "lemming" "fuerth")
-       (BEGEGNUNG "Hallunken" "HanseGo2")
-       (BEGEGNUNG "<Freilos>" "Hanse3")))
+       (BEGEGNUNG "lemming" "fuerth" (BRETT 1 T) (BRETT 2 T) (BRETT 3 T) (BRETT 4 T))
+       (BEGEGNUNG "Hallunken" "HanseGo2" (BRETT 0 0) (BRETT 1 1) (BRETT 2 3) (BRETT 4 4))
+       (BEGEGNUNG "<Freilos>" "Hanse3" (BRETT 0 0 "1:1") (BRETT 1 1 "1:1") (BRETT 2 2 "1:1") (BRETT 3 3 "1:1"))))
