@@ -220,8 +220,16 @@
       (runde
        (BEGEGNUNG "MaTo" "BambusBO" (BRETT 1 1 "0:2") (BRETT 2 3 "2:0") (BRETT 3 4 "2:0") (BRETT 4 6 "2:0"))
        (BEGEGNUNG "HanseGo2" "Detmold" (BRETT NIL 1 "!!:2") (BRETT 1 2 "0:2") (BRETT 5 4 "2:0") (BRETT 6 5 "0:2"))
-       (BEGEGNUNG "KasselGZ" "Hanse3")
+       (BEGEGNUNG "KasselGZ" "Hanse3" (BRETT 0 1 "2:0") (BRETT 5 4 "2:0") (BRETT 6 5 "2:0") (BRETT 8 6 "0:2"))
        (BEGEGNUNG "<Freilos>" "Hallunken" (brett t t "1:1") (brett t t "1:1") (brett t t "1:1") (brett t t "1:1"))
        (BEGEGNUNG "flaleer2" "fuerth" (BRETT 1 0 "0:2") (BRETT 2 5 "0:2") (BRETT 4 6 "0:2") (BRETT 8 8 "0:2"))
        (BEGEGNUNG "Jena3" "lemming" (BRETT 5 2 "0:2") (BRETT 6 4 "0:2" "(Mo 20:30)") (BRETT 11 5 "2:0") (BRETT 10 6 "0:2" "(Aufstellungsfehler)"))
-       (BEGEGNUNG "hhhafen" "steinfux2" (BRETT 0 0 "2:0") (BRETT 2 NIL "2:!") (BRETT 3 7 "0:2") (BRETT 8 9 "2:0"))))
+       (BEGEGNUNG "hhhafen" "steinfux2" (BRETT 0 0 "2:0") (BRETT 2 NIL "2:!") (BRETT 3 7 "0:2") (BRETT 8 9 "2:0")))
+      (runde
+       (BEGEGNUNG "Hanse3" "HanseGo2")
+       (BEGEGNUNG "steinfux2" "KasselGZ")
+       (BEGEGNUNG "<Freilos>" "flaleer2")
+       (BEGEGNUNG "Hallunken" "Jena3")
+       (BEGEGNUNG "fuerth" "hhhafen")
+       (BEGEGNUNG "Detmold" "MaTo")
+       (BEGEGNUNG "lemming" "BambusBO")))
