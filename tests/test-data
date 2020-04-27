@@ -232,4 +232,12 @@
        (BEGEGNUNG "Hallunken" "Jena3" (BRETT 1 5 "2:0") (BRETT 3 6 "2:0") (BRETT 4 10 "2:0") (BRETT 6 11 "0:2"))
        (BEGEGNUNG "fuerth" "hhhafen" (BRETT 0 2 "2:0") (BRETT 3 3 "2:0") (BRETT 4 4 "0:2") (BRETT 5 8 "2:0"))
        (BEGEGNUNG "Detmold" "MaTo" (BRETT 0 0 "0:2") (BRETT 1 1 "0:2") (BRETT 2 2 "0:2") (BRETT 4 3 "0:2"))
-       (BEGEGNUNG "lemming" "BambusBO" (BRETT 0 2 "2:0") (BRETT 1 3 "2:0") (BRETT 2 T "2:0") (BRETT 5 6 "2:0"))))
+       (BEGEGNUNG "lemming" "BambusBO" (BRETT 0 2 "2:0") (BRETT 1 3 "2:0") (BRETT 2 T "2:0") (BRETT 5 6 "2:0")))
+      (runde
+       (BEGEGNUNG "Jena3" "HanseGo2")
+       (BEGEGNUNG "steinfux2" "BambusBO")
+       (BEGEGNUNG "KasselGZ" "lemming")
+       (BEGEGNUNG "Detmold" "Hanse3")
+       (BEGEGNUNG "MaTo" "flaleer2")
+       (BEGEGNUNG "<Freilos>" "hhhafen")
+       (BEGEGNUNG "Hallunken" "fuerth")))
