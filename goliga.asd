@@ -5,7 +5,7 @@
   :license "public domain"
   :serial t
   :depends-on (#:alexandria
-               #:cl-arrows
+               #:arrows
                #:cl-ppcre
                #:cl-who
                #:fare-csv
