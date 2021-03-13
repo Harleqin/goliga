@@ -197,10 +197,17 @@
        (BEGEGNUNG "Flensburg" "KasselGZ" (BRETT 0 1 "2:0") (BRETT 1 2 "2:0") (BRETT 2 5 "2:0") (BRETT 3 6 "2:0"))
        (BEGEGNUNG "HDBrett" "flaleer2" (BRETT 1 1 "0:2") (BRETT 2 2 "0:2") (BRETT 4 7 "2:0") (BRETT 5 8 "0:2")))
       (runde
-       (BEGEGNUNG "flaleer2" "steinfux2")
-       (BEGEGNUNG "JenaDry" "HDBrett")
-       (BEGEGNUNG "FR3Brett" "KasselGZ")
-       (BEGEGNUNG "Hanse3" "hhhafen")
-       (BEGEGNUNG "GiessenB" "FraLooser")
-       (BEGEGNUNG "Flensburg" "Hallunken")
-       (BEGEGNUNG "OsaeOsna" "Saarbaki2")))
+       (BEGEGNUNG "flaleer2" "steinfux2"
+                  (BRETT 1 1 "0:2") (BRETT 5 2 "0:2") (BRETT 7 8 "0:2") (BRETT 8 9 "2:0"))
+       (BEGEGNUNG "JenaDry" "HDBrett"
+                  (BRETT 1 2 "2:0") (BRETT 4 3 "0:2") (BRETT 5 6 "0:2") (BRETT 6 7 "2:0"))
+       (BEGEGNUNG "FR3Brett" "KasselGZ"
+                  (BRETT 1 0 "0:2") (BRETT 4 2 "0:2") (BRETT 5 6 "2:0") (BRETT 6 8 "0:2"))
+       (BEGEGNUNG "Hanse3" "hhhafen"
+                  (BRETT 1 0 "2:0") (BRETT 6 2 "0:2") (BRETT 7 4 "2:0") (BRETT 10 8 "0:2"))
+       (BEGEGNUNG "GiessenB" "FraLooser"
+                  (BRETT 0 0 "2:0") (BRETT 1 1 "0:2") (BRETT 3 2 "2:0") (BRETT 5 3 "2:0"))
+       (BEGEGNUNG "Flensburg" "Hallunken"
+                  (BRETT 0 0 "2:0") (BRETT 1 1 "2:0") (BRETT 2 2 "2:0") (BRETT 3 6 "2:0"))
+       (BEGEGNUNG "OsaeOsna" "Saarbaki2"
+                  (BRETT 0 3 "2:0") (BRETT 1 4 "2:0") (BRETT 2 5 "2:0") (BRETT 3 7 "2:0"))))
