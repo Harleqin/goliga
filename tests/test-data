@@ -225,4 +225,12 @@
        (BEGEGNUNG "Hallunken" "FraLooser"
                   (BRETT 5 1 "2:0") (BRETT 7 2 "2:0") (BRETT 8 3 "2:0") (BRETT 9 4 "2:0"))
        (BEGEGNUNG "Hanse3" "FR3Brett"
-                  (BRETT 1 1 "0:2") (BRETT 6 4 "0:2") (BRETT 7 5 "2:0") (BRETT 10 6 "0:2"))))
+                  (BRETT 1 1 "0:2") (BRETT 6 4 "0:2") (BRETT 7 5 "2:0") (BRETT 10 6 "0:2")))
+      (runde
+       (BEGEGNUNG "JenaDry" "Hanse3")
+       (BEGEGNUNG "Flensburg" "GiessenB")
+       (BEGEGNUNG "hhhafen" "KasselGZ")
+       (BEGEGNUNG "HDBrett" "Hallunken")
+       (BEGEGNUNG "steinfux2" "Saarbaki2")
+       (BEGEGNUNG "flaleer2" "FR3Brett")
+       (BEGEGNUNG "FraLooser" "OsaeOsna")))
